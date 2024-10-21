@@ -1,2 +1,2 @@
 //greet everyone
-console.log("Hello peeps");
+("Hello peeps");
