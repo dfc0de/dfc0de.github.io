@@ -1,3 +1,3 @@
-let visitor = "guest";
+let visitor = "visitorName";
 
-console.log(`Hello ${visitor} - how are you doing?`);
+console.log(`Hello ${visitorName} - how are you doing?`);
