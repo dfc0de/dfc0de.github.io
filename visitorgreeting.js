@@ -1,3 +1,3 @@
 let visitorName = "mate";
 
-console.log(`Hello ${visitorName} - how are you doing?`);
+document.getElementById("20").(`Hello ${visitorName} - how are you doing?`);
