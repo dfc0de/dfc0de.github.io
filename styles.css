@@ -14,11 +14,6 @@ a {
   text-decoration: none;
 }
 
-p {
-  color: rgb(0, 217, 255);
-  font-size: 20px;
-}
-
 a:hover {
   color: #ffd700; /* Lighter shade of gold */
 }
