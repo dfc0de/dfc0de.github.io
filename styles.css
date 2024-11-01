@@ -1,3 +1,38 @@
+/* styles.css */
 body {
-    background-color: whitesmoke;
-  }
+  background-color: black;
+  color: gold;
+  font-family: Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: gold;
+}
+
+a {
+  color: gold;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffd700; /* Lighter shade of gold */
+}
+
+button {
+  background-color: gold;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ffd700; /* Lighter shade of gold */
+}
+
+.container {
+  padding: 20px;
+  border: 1px solid gold;
+  border-radius: 5px;
+  background-color: #333; /* Dark grey for contrast */
+}
