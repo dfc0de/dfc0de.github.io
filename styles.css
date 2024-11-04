@@ -36,3 +36,31 @@ button:hover {
   border-radius: 5px;
   background-color: #333; /* Dark grey for contrast */
 }
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.menu li {
+  margin: 0 15px;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  padding: 15px 20px;
+  display: block;
+}
+
+.menu li a:hover {
+  background-color: #575757;
+  border-radius: 4px;
+}
