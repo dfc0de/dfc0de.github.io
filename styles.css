@@ -51,11 +51,6 @@ main {
   font-size: 16px;
 }
 
-.diceShake:hover {
-  animation: shake 0.3s;
-  animation-iteration-count: infinite;
-}
-
 .emoji {
   font-size: 26px;
   color: white;
@@ -63,17 +58,21 @@ main {
   display: block;
 }
 
+@keyframes shake {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(5px, -5px); }
+  50% { transform: translate(10px, 0); }
+  75% { transform: translate(5px, 5px); }
+  100% { transform: translate(0, 0); }
+}
+
 #diceRoll {
-  font-size: 26px;
-  color: rgb(255, 0, 0);
-  text-decoration: underline;
+  font-size: 20px;
+  color: rgb(56, 0, 0);
   display: block;
 }
 
-@keyframes shake {
-  0% { transform: translateX(-5px); }
-  25% { transform: translateX(-5px); }
-  50% { transform: translateX(5px); }
-  75% { transform: translateX(-5px); }
-  100% { transform: translateX(5px); }
+.diceShake:hover {
+  animation: shake 0.3s;
+  animation-iteration-count: infinite;
 }
