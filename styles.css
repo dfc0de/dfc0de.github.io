@@ -48,9 +48,13 @@ main {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 36px;
+  font-size: 16px;
 }
 
 .button:hover {
   background-color: #0056b3;
+}
+
+.emoji {
+  font-size: 20px;
 }
