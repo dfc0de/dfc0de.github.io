@@ -62,7 +62,7 @@ main {
   display: block;
 }
 
-#diceroll {
+#diceRoll {
   font-size: 26px;
   color: rgb(255, 0, 0);
   text-decoration: underline;
