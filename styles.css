@@ -1,40 +1,11 @@
-/* styles.css */
 body {
-  background-color: black;
-  color: gold;
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: gold;
-}
-
-a {
-  color: gold;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #ffd700; /* Lighter shade of gold */
-}
-
-button {
-  background-color: gold;
-  color: black;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #ff0000;
-}
-
-.container {
-  padding: 20px;
-  border: 1px solid gold;
-  border-radius: 5px;
-  background-color: #333; /* Dark grey for contrast */
+header {
+  background-color: #333;
 }
 
 nav {
@@ -63,4 +34,23 @@ nav {
 .menu li a:hover {
   background-color: #575757;
   border-radius: 4px;
+}
+
+main {
+  padding: 2rem;
+  text-align: center;
+}
+
+.button {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.button:hover {
+  background-color: #0056b3;
 }
