@@ -52,9 +52,13 @@ main {
 }
 
 .button:hover {
-  background-color: #0056b3;
+  background-color: #ff0000;
 }
 
 .emoji {
   font-size: 20px;
+  color: white;
+  text-decoration: none;
+  padding: 15px 20px;
+  display: block;
 }
