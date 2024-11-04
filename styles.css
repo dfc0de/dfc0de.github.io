@@ -61,3 +61,10 @@ main {
   text-decoration: none;
   display: block;
 }
+
+#diceroll {
+  font-size: 26px;
+  color: rgb(255, 0, 0);
+  text-decoration: underline;
+  display: block;
+}
