@@ -34,11 +34,16 @@
         <p>Hello ! The objective of this game is to roll a 12.</p>
         <p>Fancy your chances?</p>
     <br>
-    <button aria-label="click to roll the dice" class="diceShake" onclick="rollOfDice()"> <span class="emoji">🎲🎲</span> </button>
+    <button aria-label="click to roll the dice" class="diceShake" onclick="rollOfDice()" onclick="disableButton()"> <span class="emoji">🎲🎲</span> </button>
         <p id="diceRoll"></p>
         <div id="diceResult"></div>
             <script type="text/javascript" src="rollofdice.js"></script>
     <br>
+    <script>
+        function disableButton() {
+            document.getElementByClass('diceShake').disabled = true;
+        }
+    </script>
 </body>
 <br>
 </html>
