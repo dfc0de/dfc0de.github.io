@@ -1,61 +1,38 @@
-/* Reset some default browser styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Body styling */
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
-  padding: 20px;
-}
-
-/* Header styling */
-header {
-  background: #333;
-  color: #fff;
-  padding: 10px 0;
-  text-align: center;
-}
-
 /* Navigation bar styling */
 nav {
-  background: #444;
-  color: #fff;
+  background: linear-gradient(90deg, #4b6cb7, #182848);
   padding: 10px;
-  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-nav a {
+/* Menu list styling */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Menu item styling */
+nav ul li {
+  margin: 0 15px;
+}
+
+/* Link styling */
+nav ul li a {
   color: #fff;
   text-decoration: none;
-  margin: 0 10px;
+  padding: 10px 20px;
+  display: block;
+  border-radius: 30px;
+  transition: background 0.3s, transform 0.3s;
 }
 
-nav a:hover {
-  text-decoration: underline;
-}
-
-/* Main content styling */
-main {
-  background: #fff;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Footer styling */
-footer {
-  background: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
-  margin-top: 20px;
+/* Hover effect */
+nav ul li a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
 }
 
 .button {
