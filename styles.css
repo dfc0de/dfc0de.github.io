@@ -133,6 +133,11 @@ footer {
   font-size: 16px;
 }
 
+.button:disabled {
+  background-color: #cccccc; /* Grey */
+  cursor: not-allowed;
+}
+
 .emoji {
   font-size: 26px;
   color: white;
