@@ -2,12 +2,16 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  max-width: 100%;
+  height: auto;
 }
 
 header {
   background-color: #333;
   height: 10vh;
   padding: 1em;
+  max-width: 100%;
+  height: auto;
 }
 
 nav {
@@ -15,6 +19,8 @@ nav {
   justify-content: center;
   height: 10vh;
   padding: 1em;
+  max-width: 100%;
+  height: auto;
 }
 
 .menu {
@@ -24,6 +30,8 @@ nav {
   display: flex;
   height: 10vh;
   padding: 1em;
+  max-width: 100%;
+  height: auto;
 }
 
 .menu li {
