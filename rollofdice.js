@@ -7,7 +7,7 @@ function rollOfDice() {
     const diceOutcome = document.getElementById('diceRoll').innerText = `${dice}`;
     if (dice === 12) {
         const prizeLink = `<a href="${prize}" target="_blank">prize</a>`;
-        document.getElementById('diceResult').innerText = `You rolled a ${dice}! Congratulations, you won a ${prizeLink}! 🎉`;
+        document.getElementById('diceResult').innerHTML = `You rolled a ${dice}! Congratulations, you won a ${prizeLink}! 🎉`;
     } else {
         document.getElementById('diceResult').innerText = `You rolled a ${dice}. Try again!`;
     }
