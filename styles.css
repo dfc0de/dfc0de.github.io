@@ -155,7 +155,7 @@ footer {
 /* Button Animation */
 #dfbutton:hover {
   display: inline-block;
-  animation: bounce 0.5s;
+  animation: bounce 0.5s infinite;
 }
 
 @keyframes bounce {
