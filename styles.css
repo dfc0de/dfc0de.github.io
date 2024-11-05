@@ -72,7 +72,6 @@ main {
   display: block;
 }
 
-.diceShake:hover {
-  animation: shake 0.3s;
-  animation-iteration-count: infinite;
+button:active {
+  animation: shake 1s;
 }
