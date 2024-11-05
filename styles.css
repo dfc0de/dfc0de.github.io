@@ -19,20 +19,34 @@ header h1 {
   color: #ffffff;
 }
 
-/* Navigation Styles */
+/* Horizontal Menu Styles */
 nav {
-  background-color: #A52A2A;
-  padding: 10px;
-  text-align: center;
+  background-color: #A52A2A; /* Slightly lighter dark red */
+  overflow: hidden;
 }
 
-nav a {
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  float: left;
+}
+
+nav ul li a {
+  display: block;
   color: #ffffff;
+  text-align: center;
+  padding: 14px 20px;
   text-decoration: none;
-  margin: 0 15px;
 }
 
-nav a:hover {
+nav ul li a:hover {
+  background-color: #8B0000; /* Dark red */
   text-decoration: underline;
 }
 
