@@ -1,26 +1,27 @@
 /* General Styles */
 body {
-  background-color: #2c2c2c;
+  background: linear-gradient(to bottom, #000000, #2c2c2c);
   color: #ffffff;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  font-size: 18px; /* Big clear text */
 }
 
 /* General link styles */
 a {
-  color: #d4a5ff; /* Default link colour */
+  color: #00aaff; /* Blue link colour */
   text-decoration: none; /* Remove underline */
 }
 
 a:hover {
-  color: #b380ff; /* Colour when hovered over */
+  color: #0088cc; /* Darker blue on hover */
   text-decoration: underline; /* Underline on hover */
 }
 
 /* Header Styles */
 header {
-  background-color: #4b0082; /* Dark purple */
+  background: linear-gradient(to right, #000000, #0000ff); /* Black to blue gradient */
   padding: 20px;
   text-align: center;
 }
@@ -28,11 +29,12 @@ header {
 header h1 {
   margin: 0;
   color: #ffffff;
+  font-size: 2.5em; /* Big clear text */
 }
 
 /* Horizontal Menu Styles */
 nav {
-  background-color: #6a0dad; /* Slightly lighter dark purple */
+  background: linear-gradient(to right, #0000ff, #000000); /* Blue to black gradient */
   overflow: hidden;
 }
 
@@ -54,10 +56,11 @@ nav ul li a {
   text-align: center;
   padding: 14px 20px;
   text-decoration: none;
+  font-size: 1.2em; /* Slightly larger text */
 }
 
 nav ul li a:hover {
-  background-color: #4b0082; /* Dark purple */
+  background-color: #0000ff; /* Blue */
   text-decoration: underline;
 }
 
@@ -83,11 +86,12 @@ nav ul li a:hover {
 /* Main Content Styles */
 main {
   padding: 20px;
+  font-size: 1.2em; /* Slightly larger text */
 }
 
 /* Footer Styles */
 footer {
-  background-color: #4b0082;
+  background: linear-gradient(to right, #000000, #0000ff); /* Black to blue gradient */
   color: #ffffff;
   text-align: center;
   padding: 10px;
@@ -100,7 +104,7 @@ footer {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #6a0dad;
+  background: linear-gradient(to right, #0000ff, #000000); /* Blue to black gradient */
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -115,7 +119,7 @@ footer {
 }
 
 .dropdown-content a:hover {
-  background-color: #4b0082;
+  background-color: #0000ff;
 }
 
 .dropdown:hover .dropdown-content {
@@ -124,7 +128,7 @@ footer {
 
 /* Dice Game styles */
 .diceShake {
-  background-color: #800080; /* Purple */
+  background-color: #0000ff; /* Blue */
   color: white;
   padding: 10px 20px;
   border: none;
