@@ -72,6 +72,6 @@ main {
   display: block;
 }
 
-button:active {
-  animation: shake 2s;
+button:hover {
+  animation: shake 0.5s;
 }
