@@ -1,53 +1,61 @@
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  max-width: 100%;
-  height: auto;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 20px;
 }
 
+/* Header styling */
 header {
-  background-color: #333;
-  height: 10vh;
-  padding: 1em;
-  max-width: 100%;
-  height: auto;
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  max-width: 100%;
-  height: auto;
-}
-
-.menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  height: auto;
-}
-
-.menu li {
-  margin: 0 15px;
-}
-
-.menu li a {
-  color: white;
-  text-decoration: none;
-  padding: 15px 20px;
-  display: block;
-}
-
-.menu li a:hover {
-  background-color: #575757;
-  border-radius: 4px;
-}
-
-main {
-  padding: 2rem;
+  background: #333;
+  color: #fff;
+  padding: 10px 0;
   text-align: center;
+}
+
+/* Navigation bar styling */
+nav {
+  background: #444;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main content styling */
+main {
+  background: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer styling */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 20px;
 }
 
 .button {
@@ -73,16 +81,6 @@ main {
   50% { transform: translate(10px, 0); }
   75% { transform: translate(5px, 5px); }
   100% { transform: translate(0, 0); }
-}
-
-@media (max-width: 600px) {
-  header {
-      height: 50px; /* Adjust height */
-      padding: 10px; /* Adjust padding */
-  }
-  header h1 {
-      font-size: 18px; /* Adjust font size */
-  }
 }
 
 #diceRoll {
