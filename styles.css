@@ -7,6 +7,17 @@ body {
   padding: 0;
 }
 
+/* General link styles */
+a {
+  color: #ffffff; /* Default link colour */
+  text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+  color: #ff6347; /* Colour when hovered over */
+  text-decoration: underline; /* Underline on hover */
+}
+
 /* Header Styles */
 header {
   background-color: #8B0000;
