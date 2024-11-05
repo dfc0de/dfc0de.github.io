@@ -73,5 +73,5 @@ main {
 }
 
 button:hover {
-  animation: shake 2s;
+  animation: shake 0.3s;
 }
