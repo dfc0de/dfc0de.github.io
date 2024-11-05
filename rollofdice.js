@@ -1,5 +1,5 @@
 // this is the link to the prize you win when rolling a 12
-const prize = "https://www.google.com";
+const prize = "https://www.jdwetherspoon.com/wp-content/uploads/menus/currentmenus/MENU_255.pdf";
 
 //this is the dice roll function
 function rollOfDice() {
