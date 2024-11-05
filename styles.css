@@ -17,8 +17,6 @@ header {
 nav {
   display: flex;
   justify-content: center;
-  height: 10vh;
-  padding: 1em;
   max-width: 100%;
   height: auto;
 }
@@ -28,9 +26,6 @@ nav {
   padding: 0;
   margin: 0;
   display: flex;
-  height: 10vh;
-  padding: 1em;
-  max-width: 100%;
   height: auto;
 }
 
