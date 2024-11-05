@@ -9,12 +9,12 @@ body {
 
 /* General link styles */
 a {
-  color: #ffffff; /* Default link colour */
+  color: #ff01c8; /* Default link colour */
   text-decoration: none; /* Remove underline */
 }
 
 a:hover {
-  color: #ff6347; /* Colour when hovered over */
+  color: #ff00b3; /* Colour when hovered over */
   text-decoration: underline; /* Underline on hover */
 }
 
