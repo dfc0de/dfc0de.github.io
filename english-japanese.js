@@ -1,11 +1,11 @@
 document.getElementById('input').addEventListener('input', function() {
-    var inputText = this.value;
-    var translatedText = translateToJapanese(inputText);
+    const inputText = this.value;
+    const translatedText = translateToJapanese(inputText);
     document.getElementById('output').textContent = translatedText;
 });
 
 function translateToJapanese(text) {
-    var translations = {
+    const translations = {
         'A': 'エー',
         'B': 'ビー',
         'C': 'シー',
