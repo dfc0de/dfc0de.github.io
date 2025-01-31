@@ -1,11 +1,14 @@
+// script.js
 const chatBox = document.getElementById("chat-box");
 const userInput = document.getElementById("user-input");
 
-// Load the toxicity model
+// Load the Universal Sentence Encoder model
 let model;
-toxicity.load(0.9).then(loadedModel => {
-    model = loadedModel;
-});
+async function loadModel() {
+    model = await use.load();
+    console.log("Model loaded.");
+}
+loadModel();
 
 async function sendMessage() {
     const userText = userInput.value;
@@ -14,11 +17,9 @@ async function sendMessage() {
     addMessage("You", userText);
 
     if (model) {
-        const predictions = await model.classify([userText]);
-        const toxic = predictions.some(prediction => prediction.results[0].match);
-
-        const botResponse = toxic ? "Let's keep our conversation positive!" : "That's an interesting point about Mars!";
-        addMessage("Bot", botResponse);
+        const input = await model.embed([userText]);
+        const response = generateResponse(input);
+        addMessage("Bot", response);
     } else {
         addMessage("Bot", "I'm still loading...");
     }
@@ -32,4 +33,15 @@ function addMessage(sender, text) {
     message.innerText = sender + ": " + text;
     chatBox.appendChild(message);
     chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+function generateResponse(input) {
+    // Simple logic for demo purposes
+    const responses = [
+        "Mars is fascinating, isn't it?",
+        "What would you build first on Mars?",
+        "Did you know that a day on Mars is just over 24 hours?",
+    ];
+    const index = Math.floor(Math.random() * responses.length);
+    return responses[index];
 }
