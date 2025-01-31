@@ -1,4 +1,3 @@
-// script.js
 const chatBox = document.getElementById("chat-box");
 const userInput = document.getElementById("user-input");
 
@@ -45,3 +44,10 @@ function generateResponse(input) {
     const index = Math.floor(Math.random() * responses.length);
     return responses[index];
 }
+
+// Add event listener to detect Enter key press
+userInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        sendMessage();
+    }
+});
