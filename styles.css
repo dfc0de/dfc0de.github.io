@@ -16,14 +16,23 @@ body {
   text-align: center;
 }
 
-.green-clock {
-  background-color: black;
-  border: 5px solid green;
+.clock-label {
+  font-size: 20px;
+  font-weight: bold;
+  color: green; /* Default to green */
+  text-shadow: 0 0 10px green, 0 0 20px green; /* Green glowing effect */
+  margin-bottom: 10px; /* Space between title and time */
+  text-align: center;
 }
 
-.red-clock {
-  background-color: black;
-  border: 5px solid red; /* Red glowing border */
+.green-clock .clock-label {
+  color: green; /* Specifically style for green clock */
+  text-shadow: 0 0 10px green, 0 0 20px green;
+}
+
+.red-clock .clock-label {
+  color: red; /* Specifically style for red clock */
+  text-shadow: 0 0 10px red, 0 0 20px red;
 }
 
 #local-time {
@@ -38,13 +47,4 @@ body {
   font-size: 60px;
   font-weight: bold;
   text-shadow: 0 0 10px red, 0 0 20px red;
-}
-
-.clock-label {
-  font-size: 20px;
-  font-weight: bold;
-  color: inherit; /* Adapts to parent (green or red) */
-  text-shadow: inherit; /* Matches glowing effect of parent */
-  margin-bottom: 10px; /* Space between title and time */
-  text-align: center;
 }
