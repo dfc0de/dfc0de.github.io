@@ -22,4 +22,4 @@ function updateClock() {
   setInterval(updateClock, 1000);
   
   // Initialize the clocks
-  updateClock();  
+  updateClock();
