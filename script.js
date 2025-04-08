@@ -1,22 +1,19 @@
 function updateClock() {
     const now = new Date();
   
-    // Get current hours, minutes, and seconds
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
-    const seconds = now.getSeconds();
+    const hours = String(now.getHours()).padStart(2, '0'); // Pad single digits with 0
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
   
-    // Calculate rotation for each hand
-    const hoursRotation = (hours % 12) * 30 + minutes * 0.5; // 30 degrees per hour + adjustment for minutes
-    const minutesRotation = minutes * 6; // 6 degrees per minute
-    const secondsRotation = seconds * 6; // 6 degrees per second
+    // Format the time as HH:MM:SS
+    const timeString = `${hours}:${minutes}:${seconds}`;
   
-    // Rotate the clock hands
-    document.querySelector('.hour-hand').style.transform = `translateX(-50%) rotate(${hoursRotation + 90}deg)`;
-    document.querySelector('.minute-hand').style.transform = `translateX(-50%) rotate(${minutesRotation + 90}deg)`;
-    document.querySelector('.second-hand').style.transform = `translateX(-50%) rotate(${secondsRotation + 90}deg)`;
+    // Update the clock display
+    document.getElementById('time').textContent = timeString;
   }
   
-  // Initialize and update the clock every second
-  updateClock();
-  setInterval(updateClock, 1000);  
+  // Update the clock every second
+  setInterval(updateClock, 1000);
+  
+  // Initialize the clock display
+  updateClock();  
