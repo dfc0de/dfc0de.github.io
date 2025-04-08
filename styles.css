@@ -1,39 +1,49 @@
 body {
   display: flex;
-  flex-direction: column; /* Aligns the clocks vertically */
+  flex-direction: column; /* Align clocks vertically */
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-color: black; /* Clock background */
-  font-family: 'Courier New', Courier, monospace; /* Retro look */
+  background-color: black; /* Background for the webpage */
+  font-family: 'Courier New', Courier, monospace; /* Retro vibe */
 }
 
 .digital-clock {
   padding: 20px;
   border-radius: 10px;
-  background-color: black;
-  border: 5px solid green; /* Border for the oblong clock shape */
-  margin: 10px; /* Space between the clocks */
+  margin: 10px;
+  text-align: center;
 }
 
-#local-time, #sydney-time {
-  color: green; /* Glowing green text */
+.green-clock {
+  background-color: black;
+  border: 5px solid green;
+}
+
+.red-clock {
+  background-color: black;
+  border: 5px solid red; /* Red glowing border */
+}
+
+#local-time {
+  color: green; /* Green glowing text for local time */
   font-size: 60px;
   font-weight: bold;
-  text-shadow: 0 0 10px green, 0 0 20px green; /* Create the glowing effect */
+  text-shadow: 0 0 10px green, 0 0 20px green;
+}
+
+#sydney-time {
+  color: red; /* Red glowing text for Sydney time */
+  font-size: 60px;
+  font-weight: bold;
+  text-shadow: 0 0 10px red, 0 0 20px red;
 }
 
 .clock-label {
   font-size: 20px;
   font-weight: bold;
-  color: green;
-  text-shadow: 0 0 10px green, 0 0 20px green; /* Same glowing effect */
+  color: inherit; /* Inherits text color from parent */
+  text-shadow: inherit; /* Matches the glowing effect of parent */
   margin-bottom: 10px; /* Space between label and time */
-  text-align: center;
-}
-
-.red {
-  color: red; /* Red text color */
-  text-shadow: 0 0 10px red, 0 0 20px red; /* Create a glowing red effect */
 }
