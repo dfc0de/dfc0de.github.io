@@ -29,8 +29,9 @@ body {
 }
 
 .digital-clock {
-  min-width: 300px; /* Ensure clocks have a minimum width */
-  max-width: 400px; /* Prevent clocks from getting too large */
+  flex: 1; /* Allow clocks to scale dynamically */
+  min-width: 300px; /* Prevent clocks from getting too small */
+  max-width: 400px; /* Ensure consistent size across large screens */
   padding: 20px;
   border-radius: 10px;
   text-align: center;
