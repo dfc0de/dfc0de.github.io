@@ -1,5 +1,6 @@
 body {
   display: flex;
+  flex-direction: column; /* Aligns the clocks vertically */
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -13,9 +14,10 @@ body {
   border-radius: 10px;
   background-color: black;
   border: 5px solid green; /* Border for the oblong clock shape */
+  margin: 10px; /* Space between the clocks */
 }
 
-#time {
+#local-time, #sydney-time {
   color: green; /* Glowing green text */
   font-size: 60px;
   font-weight: bold;
