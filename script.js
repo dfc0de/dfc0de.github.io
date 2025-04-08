@@ -13,7 +13,7 @@ function updateCountdowns() {
     const secondsChristmas = Math.floor((timeToChristmas % (1000 * 60)) / 1000);
 
     const christmasCountdownString = `${daysChristmas} days, ${hoursChristmas} hours, ${minutesChristmas} minutes, ${secondsChristmas} seconds`;
-    document.getElementById('countdown-christmas').textContent = `Christmas: ${christmasCountdownString}`;
+    document.getElementById('countdown-christmas').textContent = `Christmas: ${christmasCountdownString} (${christmas.toDateString()})`;
 
     // Ramadan Countdown
     const ramadanYear = now.getFullYear();
@@ -29,7 +29,7 @@ function updateCountdowns() {
     const secondsRamadan = Math.floor((timeToRamadan % (1000 * 60)) / 1000);
 
     const ramadanCountdownString = `${daysRamadan} days, ${hoursRamadan} hours, ${minutesRamadan} minutes, ${secondsRamadan} seconds`;
-    document.getElementById('countdown-ramadan').textContent = `Ramadan: ${ramadanCountdownString}`;
+    document.getElementById('countdown-ramadan').textContent = `Ramadan: ${ramadanCountdownString} (${ramadanStart.toDateString()})`;
 
     // Easter Countdown
     const easter = calculateEaster(now.getFullYear());
@@ -43,7 +43,7 @@ function updateCountdowns() {
     const secondsEaster = Math.floor((timeToEaster % (1000 * 60)) / 1000);
 
     const easterCountdownString = `${daysEaster} days, ${hoursEaster} hours, ${minutesEaster} minutes, ${secondsEaster} seconds`;
-    document.getElementById('countdown-easter').textContent = `Easter: ${easterCountdownString}`;
+    document.getElementById('countdown-easter').textContent = `Easter: ${easterCountdownString} (${easter.toDateString()})`;
 }
 
 // Function to calculate approximate Ramadan start date
