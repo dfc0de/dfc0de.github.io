@@ -43,7 +43,8 @@ body {
 .clock-label {
   font-size: 20px;
   font-weight: bold;
-  color: inherit; /* Inherits text color from parent */
-  text-shadow: inherit; /* Matches the glowing effect of parent */
-  margin-bottom: 10px; /* Space between label and time */
+  color: inherit; /* Adapts to parent (green or red) */
+  text-shadow: inherit; /* Matches glowing effect of parent */
+  margin-bottom: 10px; /* Space between title and time */
+  text-align: center;
 }
