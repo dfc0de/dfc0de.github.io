@@ -1,24 +1,24 @@
-function updateClock() {
-    const now = new Date();
+function createClockNumbers() {
+    const clock = document.querySelector('.clock');
   
-    // Get current hours, minutes, and seconds
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
-    const seconds = now.getSeconds();
+    for (let i = 1; i <= 12; i++) {
+      const number = document.createElement('div');
+      number.classList.add('number');
+      number.textContent = i;
   
-    // Calculate rotation for each hand
-    const hoursRotation = (hours % 12) * 30 + minutes * 0.5; // 30 degrees per hour + minute adjustment
-    const minutesRotation = minutes * 6; // 6 degrees per minute
-    const secondsRotation = seconds * 6; // 6 degrees per second
+      // Calculate position for the numbers
+      const angle = (i * 30) * (Math.PI / 180); // Convert degrees to radians
+      const radius = clock.offsetWidth / 2 - 20; // Distance from center
+      const x = Math.cos(angle) * radius + clock.offsetWidth / 2;
+      const y = Math.sin(angle) * radius + clock.offsetHeight / 2;
   
-    // Apply rotation to clock hands
-    document.querySelector('.hour-hand').style.transform = `rotate(${hoursRotation}deg)`;
-    document.querySelector('.minute-hand').style.transform = `rotate(${minutesRotation}deg)`;
-    document.querySelector('.second-hand').style.transform = `rotate(${secondsRotation}deg)`;
+      number.style.left = `${x}px`;
+      number.style.top = `${y}px`;
+      number.style.transform = `translate(-50%, -50%)`;
+  
+      clock.appendChild(number);
+    }
   }
   
-  // Update the clock every second
-  setInterval(updateClock, 1000);
-  
-  // Initialize the clock
-  updateClock();  
+  // Call the function to add numbers to the clock
+  createClockNumbers();
