@@ -1,12 +1,13 @@
 body {
-  display: flex;
-  flex-direction: column; /* Align clocks vertically */
-  justify-content: center; /* Center clocks horizontally */
-  align-items: center; /* Align clocks in the viewport */
-  height: 100vh;
-  margin: 0;
-  background-color: black; /* Background for the webpage */
-  font-family: 'Courier New', Courier, monospace; /* Retro vibe */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  height: 100vh; /* Set the body to fill the full height of the viewport */
+  width: 100vw; /* Ensure the body spans the full width */
+  display: flex; /* Use flexbox to center your content */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  background-color: black; /* Add a background color for aesthetics */
+  font-family: 'Courier New', Courier, monospace; /* Optional styling */
 }
 
 .page-heading {
