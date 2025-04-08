@@ -32,3 +32,8 @@ body {
   margin-bottom: 10px; /* Space between label and time */
   text-align: center;
 }
+
+.red {
+  color: red; /* Red text color */
+  text-shadow: 0 0 10px red, 0 0 20px red; /* Create a glowing red effect */
+}
