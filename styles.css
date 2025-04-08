@@ -21,3 +21,12 @@ body {
   font-weight: bold;
   text-shadow: 0 0 10px green, 0 0 20px green; /* Create the glowing effect */
 }
+
+.clock-label {
+  font-size: 20px;
+  font-weight: bold;
+  color: green;
+  text-shadow: 0 0 10px green, 0 0 20px green; /* Same glowing effect */
+  margin-bottom: 10px; /* Space between label and time */
+  text-align: center;
+}
