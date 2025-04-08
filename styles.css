@@ -70,3 +70,9 @@ body {
     font-size: 36px; /* Adjust countdown size for small devices */
   }
 }
+
+/* Easter Countdown Styling */
+#countdown-easter {
+  color: blue; /* Blue for Easter countdown */
+  text-shadow: 0 0 15px blue, 0 0 30px blue;
+}
