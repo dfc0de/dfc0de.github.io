@@ -6,9 +6,9 @@ body {
   background-color: black; /* Dark background for the page */
   font-family: 'Courier New', Courier, monospace; /* Retro font style */
   display: flex;
-  flex-direction: column; /* Stack content vertically */
-  align-items: center; /* Center the content horizontally */
-  justify-content: flex-start; /* Align content to the top */
+  flex-direction: column; /* Stack heading and clocks */
+  justify-content: flex-start; /* Align content at the top */
+  align-items: center; /* Center content horizontally */
 }
 
 .page-heading {
@@ -17,11 +17,13 @@ body {
   color: gold; /* Glowing gold color */
   text-shadow: 0 0 10px gold, 0 0 20px gold; /* Glowing effect */
   text-align: center; /* Center the heading horizontally */
-  margin: 20px 0; /* Add space below the heading */
+  margin-top: 20px;
+  margin-bottom: 20px; /* Add space between heading and clocks */
 }
 
 .container {
   display: flex;
+  flex: 1; /* Stretch container to fill space */
   gap: 20px; /* Space between the clocks */
   justify-content: center; /* Center clocks horizontally */
   align-items: flex-start; /* Align clocks to the top */
