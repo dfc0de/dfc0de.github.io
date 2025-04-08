@@ -1,47 +1,51 @@
 body {
-  margin: 0; /* Remove default body margin */
-  padding: 0; /* Remove default padding */
-  height: 100vh; /* Full viewport height */
-  width: 100vw; /* Full viewport width */
-  background-color: black; /* Add a dark background for the clocks */
-  font-family: 'Courier New', Courier, monospace; /* Retro style */
-  display: flex; /* Enable flexbox */
-  flex-direction: column; /* Stack heading and clocks vertically */
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically */
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: black; /* Dark background for the page */
+  font-family: 'Courier New', Courier, monospace; /* Retro font style */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center the content horizontally */
+  justify-content: flex-start; /* Align content to the top */
 }
 
 .page-heading {
-  font-size: 36px;
+  font-size: 36px; /* Increase the font size for better visibility */
   font-weight: bold;
-  color: gold; /* Glowing gold text */
-  text-align: center; /* Center the text horizontally */
-  margin-bottom: 20px; /* Add space between the heading and clocks */
+  color: gold; /* Glowing gold color */
   text-shadow: 0 0 10px gold, 0 0 20px gold; /* Glowing effect */
+  text-align: center; /* Center the heading horizontally */
+  margin: 20px 0; /* Add space below the heading */
 }
 
 .container {
-  display: flex; /* Arrange clocks side by side */
-  gap: 20px; /* Add spacing between clocks */
+  display: flex;
+  gap: 20px; /* Space between the clocks */
+  justify-content: center; /* Center clocks horizontally */
+  align-items: flex-start; /* Align clocks to the top */
+  width: 100%; /* Ensure the container spans the full width of the viewport */
 }
 
 .digital-clock {
+  min-width: 300px; /* Ensure clocks have a minimum width */
+  max-width: 400px; /* Prevent clocks from getting too large */
   padding: 20px;
   border-radius: 10px;
   text-align: center;
-  background-color: black; /* Common background for all clocks */
 }
 
 .green-clock {
-  border: 5px solid green; /* Green border for the local clock */
-  color: green; /* Green text */
-  text-shadow: 0 0 10px green, 0 0 20px green; /* Green glowing effect */
+  border: 5px solid green; /* Green glowing border for local clock */
+  color: green;
+  text-shadow: 0 0 10px green, 0 0 20px green;
 }
 
 .red-clock {
-  border: 5px solid red; /* Red border for the Claremorris clock */
-  color: red; /* Red text */
-  text-shadow: 0 0 10px red, 0 0 20px red; /* Red glowing effect */
+  border: 5px solid red; /* Red glowing border for Claremorris clock */
+  color: red;
+  text-shadow: 0 0 10px red, 0 0 20px red;
 }
 
 #local-time, #claremorris-time {
