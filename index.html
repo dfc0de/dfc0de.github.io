@@ -3,16 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Countdown to Christmas</title>
+    <title>Dan's ITSM Tool</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1 class="page-heading">Countdowns</h1>
-    <div id="countdown-christmas" class="countdown-container box"></div>
-    <div id="countdown-ramadan" class="countdown-container box"></div>
-    <div id="countdown-diwali" class="countdown-container box"></div>
-    <div id="countdown-hanukkah" class="countdown-container box"></div>
-    <div id="countdown-easter" class="countdown-container box"></div>
-    <script src="script.js"></script>
+    <header>
+        <h1>ITSM Service Desk</h1>
+    </header>
+    <main>
+        <form id="ticket-form">
+            <label for="ticket-title">Title:</label>
+            <input type="text" id="ticket-title" name="ticket-title" required>
+
+            <label for="ticket-description">Description:</label>
+            <textarea id="ticket-description" name="ticket-description" rows="5" required></textarea>
+
+            <label for="priority">Priority:</label>
+            <select id="priority" name="priority">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+
+            <button type="submit">Create Ticket</button>
+        </form>
+    </main>
 </body>
 </html>

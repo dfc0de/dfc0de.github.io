@@ -1,53 +1,92 @@
-/* Countdown Box Styling */
-.box {
-  border: 2px solid #ffffff; /* White border for boxes */
-  border-radius: 8px; /* Rounded corners */
-  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
-  padding: 20px; /* Spacing inside the box */
-  margin: 15px; /* Space between the boxes */
-  text-align: center; /* Center-align text */
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* Soft glow effect */
-}
-
-/* Specific Styling for Each Countdown */
-#countdown-christmas {
-  border-color: #ff4040; /* Bright red for Christmas */
-}
-
-#countdown-ramadan {
-  border-color: #40ff40; /* Bright green for Ramadan */
-}
-
-#countdown-easter {
-  border-color: blue; /* Blue for Easter */
-}
-
-#countdown-diwali {
-  border-color: orange; /* Vibrant orange for Diwali */
-}
-
-#countdown-hanukkah {
-  border-color: #ffffff; /* White for Hanukkah */
-  background-color: rgba(255, 255, 255, 0.2); /* Slightly brighter background */
-}
-
-/* General Body Styling */
+/* styles.css */
 body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: black; /* Dark background for contrast */
-  color: white; /* White text for readability */
-  font-family: 'Courier New', Courier, monospace; /* Retro style */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.5;
 }
 
-/* Page Heading Styling */
-.page-heading {
-  font-size: 48px; /* Larger heading for balance */
+header {
+  background-color: #007BFF;
+  color: white;
+  padding: 1em;
+  text-align: center;
+}
+
+main {
+  margin: 2em auto;
+  padding: 2em;
+  background: white;
+  max-width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+form label {
+  display: block;
+  margin: 1em 0 0.5em;
   font-weight: bold;
-  color: gold; /* Gold color for festive theme */
-  text-shadow: 0 0 10px gold, 0 0 20px gold; /* Glow effect */
-  margin-bottom: 30px; /* Space below heading */
+}
+
+form input, form textarea, form select, form button {
+  width: 100%;
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form button {
+  background-color: #007BFF;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  header {
+      font-size: 1.2em;
+      padding: 0.8em;
+  }
+
+  main {
+      margin: 1em auto;
+      padding: 1.5em;
+  }
+
+  form label, form input, form textarea, form select, form button {
+      font-size: 1em;
+  }
+
+  form button {
+      padding: 0.7em;
+  }
+}
+
+/* Media Query for very small screens (e.g., phones) */
+@media (max-width: 480px) {
+  header {
+      font-size: 1em;
+  }
+
+  form {
+      padding: 1em;
+  }
+
+  form label {
+      margin: 0.8em 0 0.5em;
+  }
+
+  form button {
+      font-size: 0.9em;
+  }
 }
