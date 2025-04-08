@@ -52,17 +52,17 @@ body {
   position: absolute;
   width: 6px;
   height: 40%;
-  background-color: #000;
+  background-color: black;
   top: 50%;
   left: 50%;
-  transform-origin: bottom center; /* Ensures hands rotate from the bottom */
-  transform: translate(-50%, -100%) rotate(90deg); /* Aligns hands to center */
+  transform-origin: center bottom; /* Rotates around the center of the clock */
+  transform: rotate(90deg); /* Correct initial alignment */
   border-radius: 2px;
 }
 
 .minute-hand {
   height: 50%;
-  background-color: #555;
+  background-color: gray;
 }
 
 .second-hand {
