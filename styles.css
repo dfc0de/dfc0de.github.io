@@ -1,23 +1,23 @@
 body {
-  margin: 0; /* Remove default margin */
+  margin: 0; /* Remove default body margin */
   padding: 0; /* Remove default padding */
-  height: 100vh; /* Set the body to fill the full height of the viewport */
-  width: 100vw; /* Ensure the body spans the full width */
-  display: flex; /* Use flexbox to center your content */
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
-  background-color: black; /* Add a background color for aesthetics */
-  font-family: 'Courier New', Courier, monospace; /* Optional styling */
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  background-color: black; /* Add a dark background for the clocks */
+  font-family: 'Courier New', Courier, monospace; /* Retro style */
+  display: flex; /* Enable flexbox */
+  flex-direction: column; /* Stack heading and clocks vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
 }
 
 .page-heading {
   font-size: 36px;
   font-weight: bold;
-  color: gold; /* Gold text for a premium look */
-  text-align: center;
-  margin-bottom: 20px; /* Space between the heading and the clocks */
+  color: gold; /* Glowing gold text */
+  text-align: center; /* Center the text horizontally */
+  margin-bottom: 20px; /* Add space between the heading and clocks */
   text-shadow: 0 0 10px gold, 0 0 20px gold; /* Glowing effect */
-  font-family: 'Courier New', Courier, monospace;
 }
 
 .container {
