@@ -1,9 +1,9 @@
-// Show Modal on button click
+// Open Modal
 document.getElementById("open-modal").addEventListener("click", function() {
     document.getElementById("modal").style.display = "block"; // Show modal
 });
 
-// Close Modal on close button click
+// Close Modal
 document.querySelector(".close-button").addEventListener("click", function() {
     document.getElementById("modal").style.display = "none"; // Hide modal
 });
@@ -32,7 +32,6 @@ document.getElementById("ticket-form").addEventListener("submit", function(event
     ticketList.appendChild(ticketEntry);
 
     // Reset and close the modal
-    alert("Ticket created successfully!");
     document.getElementById("modal").style.display = "none"; // Close the modal
     this.reset(); // Reset the form
 });
