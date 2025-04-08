@@ -1,11 +1,11 @@
-// Open Modal
+// Show Modal on button click
 document.getElementById("open-modal").addEventListener("click", function() {
-    document.getElementById("modal").style.display = "block"; // Show the modal
+    document.getElementById("modal").style.display = "block"; // Show modal
 });
 
-// Close Modal
+// Close Modal on close button click
 document.querySelector(".close-button").addEventListener("click", function() {
-    document.getElementById("modal").style.display = "none"; // Hide the modal
+    document.getElementById("modal").style.display = "none"; // Hide modal
 });
 
 // Submit Ticket Form
