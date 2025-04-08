@@ -1,53 +1,24 @@
-const chatBox = document.getElementById("chat-box");
-const userInput = document.getElementById("user-input");
-
-// Load the Universal Sentence Encoder model
-let model;
-async function loadModel() {
-    model = await use.load();
-    console.log("Model loaded.");
-}
-loadModel();
-
-async function sendMessage() {
-    const userText = userInput.value;
-    if (userText === "") return;
-
-    addMessage("You", userText);
-
-    if (model) {
-        const input = await model.embed([userText]);
-        const response = generateResponse(input);
-        addMessage("Bot", response);
-    } else {
-        addMessage("Bot", "I'm still loading...");
-    }
-
-    userInput.value = "";
-}
-
-function addMessage(sender, text) {
-    const message = document.createElement("div");
-    message.className = sender.toLowerCase() + "-message";
-    message.innerText = sender + ": " + text;
-    chatBox.appendChild(message);
-    chatBox.scrollTop = chatBox.scrollHeight;
-}
-
-function generateResponse(input) {
-    // Simple logic for demo purposes
-    const responses = [
-        "Mars is fascinating, isn't it?",
-        "What would you build first on Mars?",
-        "Did you know that a day on Mars is just over 24 hours?",
-    ];
-    const index = Math.floor(Math.random() * responses.length);
-    return responses[index];
-}
-
-// Add event listener to detect Enter key press
-userInput.addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-        sendMessage();
-    }
-});
+function updateClock() {
+    const now = new Date();
+  
+    // Get current hours, minutes, and seconds
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+  
+    // Calculate rotation for each hand
+    const hoursRotation = (hours % 12) * 30 + minutes * 0.5; // 30 degrees per hour + minute adjustment
+    const minutesRotation = minutes * 6; // 6 degrees per minute
+    const secondsRotation = seconds * 6; // 6 degrees per second
+  
+    // Apply rotation to clock hands
+    document.querySelector('.hour-hand').style.transform = `rotate(${hoursRotation}deg)`;
+    document.querySelector('.minute-hand').style.transform = `rotate(${minutesRotation}deg)`;
+    document.querySelector('.second-hand').style.transform = `rotate(${secondsRotation}deg)`;
+  }
+  
+  // Update the clock every second
+  setInterval(updateClock, 1000);
+  
+  // Initialize the clock
+  updateClock();  
