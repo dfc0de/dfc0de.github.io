@@ -14,7 +14,7 @@ function updateCountdowns() {
     // Ramadan Countdown
     const ramadanStart = getApproxRamadanStart(now.getFullYear());
     if (now > ramadanStart) {
-        ramadanStart.setFullYear(ramadanStart.getFullYear() + 1);
+        ramadanStart.setFullYear(ramadanStart.getFullYear() + 2); // Move to next cycle if passed
     }
     const timeToRamadan = ramadanStart - now;
     const ramadanCountdownString = formatCountdownString(timeToRamadan, "Ramadan", ramadanStart);
@@ -92,7 +92,7 @@ function calculateDiwali(year) {
     const diwaliDates = {
         2023: new Date(2023, 10, 12), // Example: November 12, 2023
         2024: new Date(2024, 10, 1),  // Example: November 1, 2024
-        2025: new Date(2025, 10, 20)  // Example: October 20, 2025
+        2025: new Date(2025, 10, 9)   // Fixed: November 9, 2025
     };
     return diwaliDates[year] || new Date(year, 10, 1); // Fallback to an approximate date
 }
