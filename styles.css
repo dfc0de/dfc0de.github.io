@@ -5,7 +5,7 @@ body {
   width: 100vw;
   background-color: black; /* Dark background for the page */
   font-family: 'Courier New', Courier, monospace; /* Retro font style */
-  font-size: 16px; /* Default size for text */
+  font-size: 20px; /* Default size for text */
   display: flex;
   flex-direction: column; /* Stack heading and clocks */
   justify-content: flex-start; /* Align content at the top */
