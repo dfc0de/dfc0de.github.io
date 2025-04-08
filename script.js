@@ -1,27 +1,24 @@
-function updateClock() {
+function updateCountdown() {
     const now = new Date();
-    const isDST = now.getMonth() >= 2 && now.getMonth() <= 9; // DST applies from March to October
-    const localOffset = isDST ? 1 : 0; // UTC+1 during DST, UTC+0 otherwise
+    const christmas = new Date(now.getFullYear(), 11, 25); // December 25 of the current year
 
-    // Local time (London)
-    const localTime = new Date(now.getTime() + localOffset * 60 * 60 * 1000);
-    const localHours = String(localTime.getUTCHours()).padStart(2, '0');
-    const localMinutes = String(localTime.getUTCMinutes()).padStart(2, '0');
-    const localSeconds = String(localTime.getUTCSeconds()).padStart(2, '0');
-    const localTimeString = `${localHours}:${localMinutes}:${localSeconds}`;
-    document.getElementById('local-time').textContent = localTimeString;
+    // Check if Christmas has passed this year, if so, use next year
+    if (now > christmas) {
+        christmas.setFullYear(christmas.getFullYear() + 1);
+    }
 
-    // Claremorris time
-    const claremorrisTime = localTime; // Claremorris shares the same time as London
-    const claremorrisHours = localHours;
-    const claremorrisMinutes = localMinutes;
-    const claremorrisSeconds = localSeconds;
-    const claremorrisTimeString = `${claremorrisHours}:${claremorrisMinutes}:${claremorrisSeconds}`;
-    document.getElementById('claremorris-time').textContent = claremorrisTimeString;
+    const timeDifference = christmas - now; // Time in milliseconds
+    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+    const countdownString = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+    document.getElementById('countdown').textContent = countdownString;
 }
 
-// Update the clocks every second
-setInterval(updateClock, 1000);
+// Update countdown every second
+setInterval(updateCountdown, 1000);
 
-// Initialize the clocks
-updateClock();
+// Initialize countdown
+updateCountdown();

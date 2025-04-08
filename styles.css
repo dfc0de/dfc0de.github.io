@@ -3,66 +3,28 @@ body {
   padding: 0;
   height: 100vh;
   width: 100vw;
-  background-color: black; /* Dark background for the page */
-  font-family: 'Courier New', Courier, monospace; /* Retro font style */
-  font-size: 20px; /* Default size for text */
+  background-color: black; /* Festive background */
+  color: white;
+  font-family: 'Courier New', Courier, monospace; /* Retro vibe */
   display: flex;
-  flex-direction: column; /* Stack heading and clocks */
-  justify-content: flex-start; /* Align content at the top */
-  align-items: center; /* Center content horizontally */
+  flex-direction: column;
+  justify-content: center; /* Center countdown on the page */
+  align-items: center;
 }
 
 .page-heading {
-  font-size: 48px; /* Increase the font size for better visibility */
+  font-size: 36px;
   font-weight: bold;
-  color: gold; /* Glowing gold color */
-  text-shadow: 0 0 10px gold, 0 0 20px gold; /* Glowing effect */
-  text-align: center; /* Center the heading horizontally */
-  margin-top: 20px;
-  margin-bottom: 20px; /* Add space between heading and clocks */
-}
-
-.container {
-  display: flex;
-  flex: 1; /* Stretch container to fill space */
-  gap: 20px; /* Space between the clocks */
-  justify-content: center; /* Center clocks horizontally */
-  align-items: flex-start; /* Align clocks to the top */
-  height: 70%; /* Use most of the screen height */
-  width: 100%; /* Ensure the container spans the full width of the viewport */
-}
-
-.digital-clock {
-  flex: 1; /* Allow clocks to scale dynamically */
-  min-width: 300px; /* Prevent clocks from getting too small */
-  max-width: 400px; /* Ensure consistent size across large screens */
-  padding: 20px;
-  border-radius: 10px;
+  color: gold; /* Glowing gold for Christmas theme */
   text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px gold, 0 0 20px gold;
 }
 
-.green-clock {
-  border: 5px solid green; /* Green glowing border for local clock */
-  color: green;
-  text-shadow: 0 0 10px green, 0 0 20px green;
-}
-
-.red-clock {
-  border: 5px solid red; /* Red glowing border for Claremorris clock */
-  color: red;
+.countdown-container {
+  font-size: 48px; /* Large text for countdown */
+  font-weight: bold;
+  color: red; /* Festive red text */
   text-shadow: 0 0 10px red, 0 0 20px red;
-}
-
-#local-time, #claremorris-time {
-  font-size: 60px;
-  font-weight: bold;
-}
-
-.clock-label {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px; /* Space between the label and the time */
   text-align: center;
-  color: inherit; /* Matches the parent color (green or red) */
-  text-shadow: inherit; /* Matches the parent's glowing effect */
 }
