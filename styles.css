@@ -1,7 +1,8 @@
 body {
   display: flex;
+  flex-direction: column; /* Align clocks vertically */
   justify-content: center; /* Center clocks horizontally */
-  align-items: center; /* Align clocks vertically in the viewport */
+  align-items: center; /* Align clocks in the viewport */
   height: 100vh;
   margin: 0;
   background-color: black; /* Background for the webpage */
@@ -9,45 +10,39 @@ body {
 }
 
 .container {
-  display: flex; /* Makes clocks display side by side */
-  gap: 20px; /* Adds spacing between the clocks */
+  display: flex; /* Arrange clocks side by side */
+  gap: 20px; /* Add spacing between clocks */
 }
 
 .digital-clock {
   padding: 20px;
   border-radius: 10px;
   text-align: center;
+  background-color: black; /* Common background for all clocks */
 }
 
 .green-clock {
-  background-color: black;
-  border: 5px solid green;
+  border: 5px solid green; /* Green border for the local clock */
+  color: green; /* Green text */
+  text-shadow: 0 0 10px green, 0 0 20px green; /* Green glowing effect */
 }
 
 .red-clock {
-  background-color: black;
-  border: 5px solid red;
+  border: 5px solid red; /* Red border for the Claremorris clock */
+  color: red; /* Red text */
+  text-shadow: 0 0 10px red, 0 0 20px red; /* Red glowing effect */
 }
 
-#local-time {
-  color: green; /* Green glowing text for local time */
+#local-time, #claremorris-time {
   font-size: 60px;
   font-weight: bold;
-  text-shadow: 0 0 10px green, 0 0 20px green;
-}
-
-#sydney-time {
-  color: red; /* Red glowing text for Sydney time */
-  font-size: 60px;
-  font-weight: bold;
-  text-shadow: 0 0 10px red, 0 0 20px red;
 }
 
 .clock-label {
   font-size: 20px;
   font-weight: bold;
-  color: inherit; /* Adapts to parent (green or red) */
-  text-shadow: inherit; /* Matches glowing effect of parent */
-  margin-bottom: 10px; /* Space between title and time */
+  margin-bottom: 10px; /* Space between the label and the time */
   text-align: center;
+  color: inherit; /* Matches the parent color (green or red) */
+  text-shadow: inherit; /* Matches the parent's glowing effect */
 }

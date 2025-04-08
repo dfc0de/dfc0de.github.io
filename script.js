@@ -8,18 +8,19 @@ function updateClock() {
     const localTimeString = `${localHours}:${localMinutes}:${localSeconds}`;
     document.getElementById('local-time').textContent = localTimeString;
   
-    // Sydney time
-    const sydneyOffset = 11; // Adjust as needed for DST
-    const sydneyTime = new Date(now.getTime() + sydneyOffset * 60 * 60 * 1000);
-    const sydneyHours = String(sydneyTime.getUTCHours()).padStart(2, '0');
-    const sydneyMinutes = String(sydneyTime.getUTCMinutes()).padStart(2, '0');
-    const sydneySeconds = String(sydneyTime.getUTCSeconds()).padStart(2, '0');
-    const sydneyTimeString = `${sydneyHours}:${sydneyMinutes}:${sydneySeconds}`;
-    document.getElementById('sydney-time').textContent = sydneyTimeString;
+    // Claremorris time
+    const isDST = now.getMonth() >= 2 && now.getMonth() <= 9; // DST is from March to October
+    const claremorrisOffset = isDST ? 1 : 0; // UTC+1 during DST, UTC+0 otherwise
+    const claremorrisTime = new Date(now.getTime() + claremorrisOffset * 60 * 60 * 1000);
+    const claremorrisHours = String(claremorrisTime.getUTCHours()).padStart(2, '0');
+    const claremorrisMinutes = String(claremorrisTime.getUTCMinutes()).padStart(2, '0');
+    const claremorrisSeconds = String(claremorrisTime.getUTCSeconds()).padStart(2, '0');
+    const claremorrisTimeString = `${claremorrisHours}:${claremorrisMinutes}:${claremorrisSeconds}`;
+    document.getElementById('sydney-time').textContent = claremorrisTimeString; // Update the ID to match your HTML
   }
   
   // Update the clocks every second
   setInterval(updateClock, 1000);
   
   // Initialize the clocks
-  updateClock();  
+  updateClock();
