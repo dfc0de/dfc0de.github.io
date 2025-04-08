@@ -5,6 +5,7 @@ body {
   width: 100vw;
   background-color: black; /* Dark background for the page */
   font-family: 'Courier New', Courier, monospace; /* Retro font style */
+  font-size: 16px; /* Default size for text */
   display: flex;
   flex-direction: column; /* Stack heading and clocks */
   justify-content: flex-start; /* Align content at the top */
@@ -12,7 +13,7 @@ body {
 }
 
 .page-heading {
-  font-size: 36px; /* Increase the font size for better visibility */
+  font-size: 48px; /* Increase the font size for better visibility */
   font-weight: bold;
   color: gold; /* Glowing gold color */
   text-shadow: 0 0 10px gold, 0 0 20px gold; /* Glowing effect */
