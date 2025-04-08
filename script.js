@@ -7,29 +7,19 @@ function updateCountdowns() {
         christmas.setFullYear(christmas.getFullYear() + 1);
     }
     const timeToChristmas = christmas - now;
-    const daysChristmas = Math.floor(timeToChristmas / (1000 * 60 * 60 * 24));
-    const hoursChristmas = Math.floor((timeToChristmas % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutesChristmas = Math.floor((timeToChristmas % (1000 * 60 * 60)) / (1000 * 60));
-    const secondsChristmas = Math.floor((timeToChristmas % (1000 * 60)) / 1000);
+    const christmasCountdownString = formatCountdownString(timeToChristmas, "Christmas", christmas);
 
-    const christmasCountdownString = `${daysChristmas} days, ${hoursChristmas} hours, ${minutesChristmas} minutes, ${secondsChristmas} seconds`;
-    document.getElementById('countdown-christmas').textContent = `Christmas: ${christmasCountdownString} (${christmas.toDateString()})`;
+    document.getElementById('countdown-christmas').textContent = christmasCountdownString;
 
     // Ramadan Countdown
-    const ramadanYear = now.getFullYear();
-    const ramadanStart = getApproxRamadanStart(ramadanYear);
+    const ramadanStart = getApproxRamadanStart(now.getFullYear());
     if (now > ramadanStart) {
-        const nextRamadanYear = ramadanYear + 1;
-        ramadanStart.setFullYear(nextRamadanYear);
+        ramadanStart.setFullYear(ramadanStart.getFullYear() + 1);
     }
     const timeToRamadan = ramadanStart - now;
-    const daysRamadan = Math.floor(timeToRamadan / (1000 * 60 * 60 * 24));
-    const hoursRamadan = Math.floor((timeToRamadan % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutesRamadan = Math.floor((timeToRamadan % (1000 * 60 * 60)) / (1000 * 60));
-    const secondsRamadan = Math.floor((timeToRamadan % (1000 * 60)) / 1000);
+    const ramadanCountdownString = formatCountdownString(timeToRamadan, "Ramadan", ramadanStart);
 
-    const ramadanCountdownString = `${daysRamadan} days, ${hoursRamadan} hours, ${minutesRamadan} minutes, ${secondsRamadan} seconds`;
-    document.getElementById('countdown-ramadan').textContent = `Ramadan: ${ramadanCountdownString} (${ramadanStart.toDateString()})`;
+    document.getElementById('countdown-ramadan').textContent = ramadanCountdownString;
 
     // Easter Countdown
     const easter = calculateEaster(now.getFullYear());
@@ -37,19 +27,44 @@ function updateCountdowns() {
         easter.setFullYear(easter.getFullYear() + 1);
     }
     const timeToEaster = easter - now;
-    const daysEaster = Math.floor(timeToEaster / (1000 * 60 * 60 * 24));
-    const hoursEaster = Math.floor((timeToEaster % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutesEaster = Math.floor((timeToEaster % (1000 * 60 * 60)) / (1000 * 60));
-    const secondsEaster = Math.floor((timeToEaster % (1000 * 60)) / 1000);
+    const easterCountdownString = formatCountdownString(timeToEaster, "Easter", easter);
 
-    const easterCountdownString = `${daysEaster} days, ${hoursEaster} hours, ${minutesEaster} minutes, ${secondsEaster} seconds`;
-    document.getElementById('countdown-easter').textContent = `Easter: ${easterCountdownString} (${easter.toDateString()})`;
+    document.getElementById('countdown-easter').textContent = easterCountdownString;
+
+    // Diwali Countdown
+    const diwali = calculateDiwali(now.getFullYear());
+    if (now > diwali) {
+        diwali.setFullYear(diwali.getFullYear() + 1);
+    }
+    const timeToDiwali = diwali - now;
+    const diwaliCountdownString = formatCountdownString(timeToDiwali, "Diwali", diwali);
+
+    document.getElementById('countdown-diwali').textContent = diwaliCountdownString;
+
+    // Hanukkah Countdown
+    const hanukkah = calculateHanukkah(now.getFullYear());
+    if (now > hanukkah) {
+        hanukkah.setFullYear(hanukkah.getFullYear() + 1);
+    }
+    const timeToHanukkah = hanukkah - now;
+    const hanukkahCountdownString = formatCountdownString(timeToHanukkah, "Hanukkah", hanukkah);
+
+    document.getElementById('countdown-hanukkah').textContent = hanukkahCountdownString;
+}
+
+// Helper function to format countdown string
+function formatCountdownString(time, eventName, eventDate) {
+    const days = Math.floor(time / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((time % (1000 * 60)) / 1000);
+    return `${eventName}: ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds (${eventDate.toDateString()})`;
 }
 
 // Function to calculate approximate Ramadan start date
 function getApproxRamadanStart(year) {
-    const baseRamadanDate = new Date(2023, 2, 23); // Example: March 23, 2023
-    const daysShift = (year - 2023) * -11; // Adjust ~11 days per year
+    const baseRamadanDate = new Date(2023, 2, 23); // March 23, 2023
+    const daysShift = (year - 2023) * -11; // Adjust by ~11 days per year
     return new Date(baseRamadanDate.getTime() + (daysShift * 24 * 60 * 60 * 1000));
 }
 
@@ -70,6 +85,26 @@ function calculateEaster(year) {
     let month = Math.floor((h + l - 7 * m + 114) / 31);
     let day = ((h + l - 7 * m + 114) % 31) + 1;
     return new Date(year, month - 1, day); // Returns Easter as a Date object
+}
+
+// Function to calculate Diwali date
+function calculateDiwali(year) {
+    const diwaliDates = {
+        2023: new Date(2023, 10, 12), // Example: November 12, 2023
+        2024: new Date(2024, 10, 1),  // Example: November 1, 2024
+        2025: new Date(2025, 10, 20)  // Example: October 20, 2025
+    };
+    return diwaliDates[year] || new Date(year, 10, 1); // Fallback to an approximate date
+}
+
+// Function to calculate Hanukkah start date
+function calculateHanukkah(year) {
+    const hanukkahDates = {
+        2023: new Date(2023, 11, 7),  // Example: December 7, 2023
+        2024: new Date(2024, 11, 26), // Example: December 26, 2024
+        2025: new Date(2025, 11, 15)  // Example: December 15, 2025
+    };
+    return hanukkahDates[year] || new Date(year, 11, 1); // Fallback to an approximate date
 }
 
 // Update countdowns every second

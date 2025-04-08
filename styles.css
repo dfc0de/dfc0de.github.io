@@ -22,6 +22,15 @@
   border-color: blue; /* Blue for Easter */
 }
 
+#countdown-diwali {
+  border-color: orange; /* Vibrant orange for Diwali */
+}
+
+#countdown-hanukkah {
+  border-color: #ffffff; /* White for Hanukkah */
+  background-color: rgba(255, 255, 255, 0.2); /* Slightly brighter background */
+}
+
 /* General Body Styling */
 body {
   margin: 0;
