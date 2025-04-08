@@ -9,6 +9,16 @@ body {
   font-family: 'Courier New', Courier, monospace; /* Retro vibe */
 }
 
+.page-heading {
+  font-size: 36px;
+  font-weight: bold;
+  color: gold; /* Gold text for a premium look */
+  text-align: center;
+  margin-bottom: 20px; /* Space between the heading and the clocks */
+  text-shadow: 0 0 10px gold, 0 0 20px gold; /* Glowing effect */
+  font-family: 'Courier New', Courier, monospace;
+}
+
 .container {
   display: flex; /* Arrange clocks side by side */
   gap: 20px; /* Add spacing between clocks */
