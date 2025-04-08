@@ -27,6 +27,7 @@ body {
   gap: 20px; /* Space between the clocks */
   justify-content: center; /* Center clocks horizontally */
   align-items: flex-start; /* Align clocks to the top */
+  height: 70%; /* Use most of the screen height */
   width: 100%; /* Ensure the container spans the full width of the viewport */
 }
 
