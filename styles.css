@@ -1,3 +1,11 @@
+/* Root Variables for Color Consistency */
+:root {
+  --gold-color: gold;
+  --red-color: #ff4040; /* Bright red for better readability */
+  --green-color: #40ff40; /* Bright green for Ramadan countdown */
+}
+
+/* General Body Styling */
 body {
   margin: 0;
   padding: 0;
@@ -5,31 +13,60 @@ body {
   width: 100vw;
   background-color: black;
   color: white;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Courier New', Courier, monospace; /* Retro style */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+/* Page Heading Styling */
 .page-heading {
-  font-size: 36px;
+  font-size: 48px; /* Larger heading for balance */
   font-weight: bold;
-  color: gold;
+  color: var(--gold-color); /* Gold for festive theme */
+  text-shadow: 0 0 10px var(--gold-color), 0 0 20px var(--gold-color);
   text-align: center;
-  margin-bottom: 20px;
-  text-shadow: 0 0 10px gold, 0 0 20px gold;
+  margin-bottom: 30px; /* Space below the heading */
+  animation: pulse 2s infinite; /* Add glowing pulse effect */
 }
 
+/* Countdown Container Styling (Default for Christmas) */
 .countdown-container {
-  font-size: 48px;
+  font-size: 48px; /* Countdown text size */
   font-weight: bold;
-  color: red; /* Use festive colors for Christmas */
-  text-shadow: 0 0 10px red, 0 0 20px red;
+  color: var(--red-color); /* Bright red for Christmas */
+  text-shadow: 0 0 15px var(--red-color), 0 0 30px var(--red-color);
   text-align: center;
+  margin-bottom: 20px; /* Space below countdown containers */
 }
 
+/* Ramadan Countdown Styling */
 #countdown-ramadan {
-  color: green; /* Use green for Ramadan countdown */
-  text-shadow: 0 0 10px green, 0 0 20px green;
+  color: var(--green-color); /* Green for Ramadan */
+  text-shadow: 0 0 15px var(--green-color), 0 0 30px var(--green-color);
+}
+
+/* Animation Keyframes for Pulsing Heading */
+@keyframes pulse {
+  0% {
+    text-shadow: 0 0 10px var(--gold-color), 0 0 20px var(--gold-color);
+  }
+  50% {
+    text-shadow: 0 0 20px var(--gold-color), 0 0 30px var(--gold-color);
+  }
+  100% {
+    text-shadow: 0 0 10px var(--gold-color), 0 0 20px var(--gold-color);
+  }
+}
+
+/* Responsive Styling for Smaller Screens */
+@media (max-width: 600px) {
+  .page-heading {
+    font-size: 36px; /* Scale down heading size */
+  }
+
+  .countdown-container {
+    font-size: 36px; /* Adjust countdown size for small devices */
+  }
 }
