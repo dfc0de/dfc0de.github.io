@@ -1,38 +1,32 @@
 body {
   display: flex;
-  flex-direction: column; /* Align clocks vertically */
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Center clocks horizontally */
+  align-items: center; /* Align clocks vertically in the viewport */
   height: 100vh;
   margin: 0;
   background-color: black; /* Background for the webpage */
   font-family: 'Courier New', Courier, monospace; /* Retro vibe */
 }
 
+.container {
+  display: flex; /* Makes clocks display side by side */
+  gap: 20px; /* Adds spacing between the clocks */
+}
+
 .digital-clock {
   padding: 20px;
   border-radius: 10px;
-  margin: 10px;
   text-align: center;
 }
 
-.clock-label {
-  font-size: 20px;
-  font-weight: bold;
-  color: green; /* Default to green */
-  text-shadow: 0 0 10px green, 0 0 20px green; /* Green glowing effect */
-  margin-bottom: 10px; /* Space between title and time */
-  text-align: center;
+.green-clock {
+  background-color: black;
+  border: 5px solid green;
 }
 
-.green-clock .clock-label {
-  color: green; /* Specifically style for green clock */
-  text-shadow: 0 0 10px green, 0 0 20px green;
-}
-
-.red-clock .clock-label {
-  color: red; /* Specifically style for red clock */
-  text-shadow: 0 0 10px red, 0 0 20px red;
+.red-clock {
+  background-color: black;
+  border: 5px solid red;
 }
 
 #local-time {
@@ -47,4 +41,13 @@ body {
   font-size: 60px;
   font-weight: bold;
   text-shadow: 0 0 10px red, 0 0 20px red;
+}
+
+.clock-label {
+  font-size: 20px;
+  font-weight: bold;
+  color: inherit; /* Adapts to parent (green or red) */
+  text-shadow: inherit; /* Matches glowing effect of parent */
+  margin-bottom: 10px; /* Space between title and time */
+  text-align: center;
 }
