@@ -63,6 +63,7 @@ const marsAlphabet = {
 };
 
 const marsNumbers = {
+    // Numeric Digits
     "1": "oneza",
     "2": "twoza",
     "3": "threeza",
@@ -72,11 +73,23 @@ const marsNumbers = {
     "7": "sevenza",
     "8": "eightza",
     "9": "nineza",
-    "0": "zeroza"
+    "0": "zeroza",
+    
+    // Word Equivalents
+    "one": "oneza",
+    "two": "twoza",
+    "three": "threeza",
+    "four": "fourza",
+    "five": "fiveza",
+    "six": "sixza",
+    "seven": "sevenza",
+    "eight": "eightza",
+    "nine": "nineza",
+    "zero": "zeroza"
 };
 
 function translateNumbers() {
-    let inputText = document.getElementById("earth-input").value.trim();
+    let inputText = document.getElementById("earth-input").value.trim().toLowerCase();
     let outputElement = document.getElementById("martian-output");
 
     // Display "Thinking..." while processing
@@ -88,13 +101,14 @@ function translateNumbers() {
             return;
         }
 
-        // Translate numbers one by one
-        let translatedNumbers = inputText.split("").map(char => {
-            return marsNumbers[char] || char; // Use Mars Numbers or keep original for non-numeric
+        // Split input into tokens (digits or words)
+        let tokens = inputText.split(/\s+/); // Split by spaces
+        let translatedTokens = tokens.map(token => {
+            return marsNumbers[token] || `[No translation for '${token}']`; // Translate numbers and words
         });
 
         // Update the output
-        outputElement.innerText = translatedNumbers.join(" ");
+        outputElement.innerText = translatedTokens.join(" ");
     }, 300); // Delay for user experience
 }
 
