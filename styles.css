@@ -1,13 +1,13 @@
 :root {
-  --black: #111;
-  --dark-grey: #222;
-  --light-grey: #888;
-  --glow-color: #0ff; /* Cyan glow effect */
+  --dark-red: #8B0000;
+  --bright-red: #FF4500;
+  --orange: #FFA500;
+  --glow-color: #FF6347; /* A warm, glowing effect */
 }
 
 body {
   font-family: "Segoe UI", sans-serif;
-  background-color: var(--black);
+  background-color: var(--dark-red);
   color: white;
   text-align: center;
   margin: 0;
@@ -16,124 +16,76 @@ body {
 
 h1 {
   margin-top: 50px;
-  font-size: 28px;
-  text-shadow: 0px 0px 8px var(--glow-color);
+  font-size: 32px;
+  color: var(--orange);
+  text-shadow: 0px 0px 10px var(--glow-color);
 }
 
-#mars-time {
-  font-size: 4vw; /* Slightly smaller text */
-  font-weight: bold;
-  color: var(--glow-color);
-  padding: 3vw; /* Less padding */
-  margin-top: 3vw;
-  display: block;
-  width: 70vw; /* Reduce width */
-  max-width: 500px; /* Smaller max size */
-  border: 3px solid var(--glow-color); /* Less border thickness */
-  border-radius: 12px;
-  box-shadow: 0px 0px 10px var(--glow-color);
+/* Translator Box */
+.translator-box {
+  background-color: var(--bright-red);
+  padding: 20px;
+  margin: 40px auto;
+  width: 60%;
+  max-width: 600px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px var(--glow-color);
+}
+
+/* Input Field */
+#earth-input {
+  width: 80%;
+  padding: 10px;
+  font-size: 18px;
+  border: 2px solid var(--orange);
+  border-radius: 10px;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Adjustments for Mobile */
-@media (max-width: 600px) {
-  #mars-time {
-    font-size: 6vw; /* Slightly smaller text */
-    padding: 5vw; /* Less padding */
-    width: 80vw; /* Adjust width */
-    max-width: 400px; /* Smaller max width */
-  }
-}
-
-nav {
-  background-color: var(--dark-grey);
-  padding: 15px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom: 2px solid var(--light-grey);
-}
-
-nav a {
+  background-color: var(--dark-red);
   color: white;
-  text-decoration: none;
-  font-size: 16px;
-  padding: 10px 15px;
-  transition: color 0.3s ease-in-out;
 }
 
-nav a:hover {
-  color: var(--glow-color);
-  text-shadow: 0px 0px 5px var(--glow-color);
-}
-
-/* Dropdown Styling */
-.dropbtn {
-  background-color: var(--dark-grey);
-  color: white;
-  font-size: 16px;
-  border: 1px solid var(--light-grey);
+button {
+  margin-top: 10px;
+  background-color: var(--orange);
+  color: var(--dark-red);
+  font-size: 18px;
+  border: none;
   padding: 10px 20px;
   cursor: pointer;
   transition: box-shadow 0.3s ease-in-out;
+  border-radius: 10px;
 }
 
-.dropbtn:hover {
+button:hover {
   box-shadow: 0px 0px 10px var(--glow-color);
 }
 
-/* Dropdown Menu */
-.dropdown {
-  position: relative;
+/* Output Text */
+#martian-output {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--orange);
+  margin-top: 15px;
+  padding: 15px;
+  border: 3px solid var(--bright-red);
+  background-color: var(--dark-red);
   display: inline-block;
+  border-radius: 12px;
+  box-shadow: 0px 0px 12px var(--glow-color);
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: var(--black);
-  min-width: 160px;
-  box-shadow: 0px 4px 10px var(--light-grey);
-  border: 1px solid var(--light-grey);
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
+/* Responsive Design */
+@media (max-width: 600px) {
+  .translator-box {
+    width: 90%;
+  }
 
-.dropdown-content a {
-  color: var(--light-grey);
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  transition: all 0.3s ease-in-out;
-}
+  #earth-input {
+    font-size: 16px;
+  }
 
-.dropdown-content a:hover {
-  color: var(--glow-color);
-  text-shadow: 0px 0px 5px var(--glow-color);
-}
-
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-  opacity: 1;
-}
-
-/* Button Glow Effect */
-.glowing-button {
-  background-color: var(--dark-grey);
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  font-size: 18px;
-  cursor: pointer;
-  text-transform: uppercase;
-  box-shadow: 0px 0px 5px var(--glow-color);
-  transition: box-shadow 0.4s ease-in-out;
-}
-
-.glowing-button:hover {
-  box-shadow: 0px 0px 15px var(--glow-color);
+  #martian-output {
+    font-size: 20px;
+    padding: 10px;
+  }
 }

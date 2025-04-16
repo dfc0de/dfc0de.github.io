@@ -3,16 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Mars - Date & Time</title>
+    <title>Earth English to Mars Martian Translator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<title>Mars Date & Time</title>
+<title>Earth English to Mars Martian Translator</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<h1>Current Time on Mars</h1>
-<p id="mars-time">Loading...</p>
+    <h1>Earth-to-Martian Translator</h1>
+    
+    <div class="translator-box">
+        <label for="earth-input">Enter Earth English:</label>
+        <input type="text" id="earth-input" placeholder="Type a sentence...">
+        <button onclick="translateText()">Translate</button>
+        
+        <h2>Martian Translation:</h2>
+        <p id="martian-output">Waiting for input...</p>
+    </div>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

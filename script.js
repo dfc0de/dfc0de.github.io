@@ -1,18 +1,12 @@
-function getMarsTime() {
-    const earthNow = new Date();
-    
-    // Convert Earth time to Mars time (approximate)
-    const marsSeconds = earthNow.getTime() / 1000 * 1.02749125;
-    const marsDate = new Date(marsSeconds * 1000);
-    
-    // Format the Mars time
-    const marsTimeString = marsDate.toUTCString().replace("GMT", "MTC (Mars Time)");
+const martianDictionary = {
+    "hello": "blorp",
+    "friend": "zog",
+    "world": "gliff",
+    "earth": "vorta"
+};
 
-    document.getElementById("mars-time").innerText = marsTimeString;
+function translateToMartian(englishText) {
+    return englishText.split(" ").map(word => martianDictionary[word.toLowerCase()] || word).join(" ");
 }
 
-// Update Mars time every second
-setInterval(getMarsTime, 1000);
-
-// Initialize the Mars time on page load
-getMarsTime();
+console.log(translateToMartian("hello friend")); // Output: "blorp zog"
