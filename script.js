@@ -32,7 +32,7 @@ const martianDictionary = {
 function translateText() {
     let inputText = document.getElementById("earth-input").value.trim();
     if (!inputText) {
-        document.getElementById("martian-output").innerText = "Please enter text!";
+        document.getElementById("martian-output").innerText = "Your translation will appear here.";
         return;
     }
 

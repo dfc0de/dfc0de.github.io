@@ -6,16 +6,13 @@
     <title>Earth English to Mars Martian Translator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<title>Earth English to Mars Martian Translator</title>
-<link rel="stylesheet" href="styles.css">
-</head>
 <body>
     <h1>Earth-to-Martian Translator</h1>
     
     <div class="translator-box">
         <label for="earth-input">Enter Earth English:</label>
-        <input type="text" id="earth-input" placeholder="Type a sentence...">
-        <button onclick="translateText()">Translate</button>
+        <!-- Added oninput attribute here for dynamic translation -->
+        <input type="text" id="earth-input" placeholder="Type a sentence..." oninput="translateText()">
         
         <h2>Martian Translation:</h2>
         <p id="martian-output">Waiting for input...</p>
