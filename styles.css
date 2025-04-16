@@ -33,13 +33,13 @@ h1 {
 }
 
 .menu-bar a {
-  text-decoration: none;
-  color: white;
+  text-decoration: none !important; /* Override default styles (like Safari's blue underline) */
+  color: white !important; /* Force white text */
   font-size: 18px;
   padding: 10px 20px;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
   border-radius: 10px;
-  display: inline-block; /* Consistent block behavior */
+  display: inline-block; /* Ensures consistent behavior */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .menu-bar a:hover {
@@ -107,9 +107,16 @@ button:hover {
 
 /* Responsive Design */
 @media (max-width: 600px) {
+  .menu-bar {
+    flex-direction: column; /* Stack menu items vertically on smaller screens */
+    padding: 10px 0;
+  }
+
   .menu-bar a {
     font-size: 16px;
     padding: 8px 15px;
+    width: 100%; /* Stretch links full-width for easier touch navigation */
+    text-align: center; /* Center-align text */
   }
 
   .translator-box {
