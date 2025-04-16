@@ -11,30 +11,25 @@
         <h1>Jordan's site</h1>
     </header>
     <nav>
-        <div>
-            Start
-        </div>
-    
-        <div>
-            <div class="links">
-                <a href=route('dashboard')>
-                    Home
-                </a>
-                <div class="dropdown">
-                    <button class="dropbtn">New</button>
-                    <div class="dropdown-content" tabindex="0">
-                        <a href="https://example.com/link1" class="link1">Link 1</a>
-                        <a href="https://example.com/link2" class="link2">Link 2</a>
-                        <a href="https://example.com/link3" class="link3">Link 3</a>
-                    </div>
+        <div class="links">
+            <a href="{{ route('dashboard') }}">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">New</button>
+                <div class="dropdown-content" tabindex="0">
+                    <a href="https://example.com/link1" class="link1">Link 1</a>
+                    <a href="https://example.com/link2" class="link2">Link 2</a>
+                    <a href="https://example.com/link3" class="link3">Link 3</a>
                 </div>
+            </div>
+        </div>
+        
         <div class="links">
             <div class="dropdown">
-                    <button class="dropbtn">Profile</button>
-                    <div class="dropdown-content" style="right: 0;">
-                        <a href="#">Log out</a>
-                    </div>
+                <button class="dropbtn">Profile</button>
+                <div class="dropdown-content" style="right: 0;">
+                    <a href="#">Log out</a>
                 </div>
+            </div>
         </div>
     </nav>
 </body>
