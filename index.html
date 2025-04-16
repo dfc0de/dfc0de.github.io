@@ -8,42 +8,38 @@
 </head>
 <body>
     <header>
-        <h1>Service Desk - Incident Management</h1>
+        <h1>Jordan's site</h1>
     </header>
-    <main>
-        <!-- Button to Open Modal -->
-        <button id="open-modal">Create New Ticket</button>
-
-        <!-- Ticket List -->
-        <section id="ticket-list">
-            <h2>Submitted Tickets</h2>
-            <!-- Tickets will appear here -->
-        </section>
-    </main>
-
-    <!-- Modal (Hidden by Default) -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <form id="ticket-form">
-                <h2>Create New Ticket</h2>
-                <label for="ticket-title">Title:</label>
-                <input type="text" id="ticket-title" name="ticket-title" required>
-
-                <label for="ticket-description">Description:</label>
-                <textarea id="ticket-description" name="ticket-description" rows="5" required></textarea>
-
-                <label for="priority">Priority:</label>
-                <select id="priority" name="priority">
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                    <option value="high">High</option>
-                </select>
-
-                <button type="submit">Submit Ticket</button>
-            </form>
+    <nav>
+        <div>
+            Start
         </div>
-    </div>
-    <script src="script.js"></script>
+    
+        <div>
+            <div class="links">
+                <a href=route('dashboard')>
+                    Home
+                </a>
+    
+                <div class="dropdown">
+                    <button class="dropbtn">New</button>
+                    <div class="dropdown-content" tabindex="0">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="links">
+            <div class="dropdown">
+                    <button class="dropbtn">Profile</button>
+                    <div class="dropdown-content" style="right: 0;">
+                        <a href="#">Log out</a>
+                    </div>
+                </div>
+        </div>
+    </nav>
 </body>
 </html>
