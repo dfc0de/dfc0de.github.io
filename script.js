@@ -5,8 +5,15 @@ const martianDictionary = {
     "earth": "vorta"
 };
 
-function translateToMartian(englishText) {
-    return englishText.split(" ").map(word => martianDictionary[word.toLowerCase()] || word).join(" ");
-}
+function translateText() {
+    let inputText = document.getElementById("earth-input").value.trim(); // Get input
 
-console.log(translateToMartian("hello friend")); // Output: "blorp zog"
+    if (inputText === "") {
+        document.getElementById("martian-output").innerText = "Please enter text!";
+        return;
+    }
+
+    let translatedText = inputText.split(" ").map(word => martianDictionary[word.toLowerCase()] || word).join(" ");
+
+    document.getElementById("martian-output").innerText = translatedText; // Update output
+}
