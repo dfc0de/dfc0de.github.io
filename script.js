@@ -54,16 +54,44 @@ function translateText() {
 
         // Otherwise, translate word by word
         let words = inputText.split(" ");
-        let translatedWords = words.map(word => {
-            if (!martianDictionary[word]) {
-                // Trigger a popup if word is not found
-                alert(`Tell me what this means: '${word}'`);
-                return `[No translation for '${word}']`;
+        let translatedWords = [];
+        let unknownWords = [];
+
+        words.forEach(word => {
+            if (martianDictionary[word]) {
+                translatedWords.push(martianDictionary[word]);
+            } else {
+                translatedWords.push(`[No translation for '${word}']`);
+                unknownWords.push(word);
             }
-            return martianDictionary[word];
         });
 
-        // Update the output after processing
+        // Update the output
         outputElement.innerText = translatedWords.join(" ");
-    }, 300); // 300 milliseconds delay
+
+        // If there are unknown words, show the "Add a Translation" section
+        if (unknownWords.length > 0) {
+            document.getElementById("add-word-section").style.display = "block";
+            document.getElementById("new-word").value = unknownWords[0]; // Show the first unknown word
+        }
+    }, 300); // Delay of 300ms
+}
+
+function addTranslation() {
+    let newWord = document.getElementById("new-word").value.trim();
+    let martianTranslation = document.getElementById("martian-translation").value.trim();
+
+    if (newWord && martianTranslation) {
+        // Add the new word and its translation to the dictionary
+        martianDictionary[newWord] = martianTranslation;
+
+        // Clear the input fields and hide the "Add a Translation" section
+        document.getElementById("new-word").value = "";
+        document.getElementById("martian-translation").value = "";
+        document.getElementById("add-word-section").style.display = "none";
+
+        alert(`Added "${newWord}" as "${martianTranslation}" to the dictionary!`);
+    } else {
+        alert("Please enter a valid translation!");
+    }
 }

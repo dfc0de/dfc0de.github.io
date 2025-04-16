@@ -11,11 +11,19 @@
     
     <div class="translator-box">
         <label for="earth-input">Enter Earth English:</label>
-        <!-- Added oninput attribute here for dynamic translation -->
         <input type="text" id="earth-input" placeholder="Type a sentence..." oninput="translateText()">
         
         <h2>Martian Translation:</h2>
         <p id="martian-output">Waiting for input...</p>
+    </div>
+    
+    <div id="add-word-section" style="display: none;">
+        <h2>Add a Translation</h2>
+        <label for="new-word">Unknown word:</label>
+        <input type="text" id="new-word" readonly>
+        <label for="martian-translation">Martian translation:</label>
+        <input type="text" id="martian-translation" placeholder="Enter Martian translation...">
+        <button onclick="addTranslation()">Add Translation</button>
     </div>
 
     <script src="script.js"></script>
