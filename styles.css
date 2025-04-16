@@ -21,27 +21,29 @@ h1 {
 }
 
 #mars-time {
-  font-size: 6vw; /* Adjust text size based on screen width */
+  font-size: 4vw; /* Slightly smaller text */
   font-weight: bold;
   color: var(--glow-color);
-  padding: 5vw; /* Scales padding dynamically */
-  margin-top: 5vw;
+  padding: 3vw; /* Less padding */
+  margin-top: 3vw;
   display: block;
-  width: 90vw; /* Makes it fit well on mobile */
-  max-width: 600px; /* Limits size on larger screens */
-  border: 4px solid var(--glow-color);
-  border-radius: 15px;
-  box-shadow: 0px 0px 15px var(--glow-color);
+  width: 70vw; /* Reduce width */
+  max-width: 500px; /* Smaller max size */
+  border: 3px solid var(--glow-color); /* Less border thickness */
+  border-radius: 12px;
+  box-shadow: 0px 0px 10px var(--glow-color);
   text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Improve mobile usability */
+/* Adjustments for Mobile */
 @media (max-width: 600px) {
   #mars-time {
-    font-size: 8vw; /* Bigger text on smaller screens */
-    padding: 8vw;
+    font-size: 6vw; /* Slightly smaller text */
+    padding: 5vw; /* Less padding */
+    width: 80vw; /* Adjust width */
+    max-width: 400px; /* Smaller max width */
   }
 }
 
