@@ -30,18 +30,22 @@ const martianDictionary = {
 };
 
 function translateText() {
-    let inputText = document.getElementById("earth-input").value.trim(); // Get user input
-
-    if (inputText === "") {
+    let inputText = document.getElementById("earth-input").value.trim();
+    if (!inputText) {
         document.getElementById("martian-output").innerText = "Please enter text!";
         return;
     }
 
     let words = inputText.toLowerCase().split(" ");
     let translatedWords = words.map(word => {
-        return martianDictionary[word] || `[ERROR: No translation for '${word}']`;
+        if (martianDictionary[word]) {
+            return martianDictionary[word]; 
+        } else {
+            let newWord = prompt(`No Martian translation for '${word}'. Add one?`);
+            if (newWord) martianDictionary[word] = newWord;
+            return newWord ? newWord : `[ERROR: No translation for '${word}']`;
+        }
     });
 
-    let translatedText = translatedWords.join(" ");
-    document.getElementById("martian-output").innerText = translatedText; // Update output
+    document.getElementById("martian-output").innerText = translatedWords.join(" ");
 }
