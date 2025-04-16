@@ -33,6 +33,58 @@ const martianDictionary = {
     "let’s explore": "Flarn nexar!"
 };
 
+const marsAlphabet = {
+    "a": "marsaa",
+    "b": "marsab",
+    "c": "marsac",
+    "d": "marsad",
+    "e": "marsae",
+    "f": "marsaf",
+    "g": "marsag",
+    "h": "marsah",
+    "i": "marsai",
+    "j": "marsaj",
+    "k": "marsak",
+    "l": "marsal",
+    "m": "marsam",
+    "n": "marsan",
+    "o": "marsao",
+    "p": "marsap",
+    "q": "marsaq",
+    "r": "marsar",
+    "s": "marsas",
+    "t": "marsat",
+    "u": "marsau",
+    "v": "marsav",
+    "w": "marsaw",
+    "x": "marsax",
+    "y": "marsay",
+    "z": "marsaz"
+};
+
+function translateToMarsAlphabet() {
+    let inputText = document.getElementById("earth-input").value.trim().toLowerCase();
+    let outputElement = document.getElementById("martian-output");
+
+    // Display "Thinking..." while processing
+    outputElement.innerText = "Thinking...";
+
+    setTimeout(() => {
+        if (!inputText) {
+            outputElement.innerText = "Your translation will appear here.";
+            return;
+        }
+
+        // Translate letter by letter
+        let translatedLetters = inputText.split("").map(letter => {
+            return marsAlphabet[letter] || letter; // Use the Mars alphabet or keep original if not found
+        });
+
+        // Update the output
+        outputElement.innerText = translatedLetters.join(" ");
+    }, 300); // Delay for user experience
+}
+
 function translateText() {
     let inputText = document.getElementById("earth-input").value.trim();
     let outputElement = document.getElementById("martian-output");
