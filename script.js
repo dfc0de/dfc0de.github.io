@@ -13,7 +13,11 @@ function translateText() {
         return;
     }
 
-    let translatedText = inputText.split(" ").map(word => martianDictionary[word.toLowerCase()] || word).join(" ");
+    let words = inputText.split(" ");
+    let translatedWords = words.map(word => {
+        return martianDictionary[word.toLowerCase()] || `[ERROR: No translation for '${word}']`;
+    });
 
+    let translatedText = translatedWords.join(" ");
     document.getElementById("martian-output").innerText = translatedText; // Update output
 }
