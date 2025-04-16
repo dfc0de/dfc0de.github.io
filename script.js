@@ -39,6 +39,8 @@ function translateText() {
     setTimeout(() => {
         if (!inputText) {
             outputElement.innerText = "Your translation will appear here.";
+            // Hide the "Add a Translation" section if no input
+            document.getElementById("add-word-section").style.display = "none";
             return;
         }
 
@@ -48,6 +50,8 @@ function translateText() {
         // Check if the entire sentence exists in the dictionary first
         if (martianDictionary[inputText]) {
             outputElement.innerText = martianDictionary[inputText];
+            // Hide the "Add a Translation" section if the sentence is found
+            document.getElementById("add-word-section").style.display = "none";
             return;
         }
 
@@ -68,10 +72,12 @@ function translateText() {
         // Update the output
         outputElement.innerText = translatedWords.join(" ");
 
-        // If there are unknown words, show the "Add a Translation" section
+        // Show or hide the "Add a Translation" section based on unknown words
         if (unknownWords.length > 0) {
             document.getElementById("add-word-section").style.display = "block";
             document.getElementById("new-word").value = unknownWords[0]; // Show the first unknown word
+        } else {
+            document.getElementById("add-word-section").style.display = "none";
         }
     }, 300); // Delay of 300ms
 }
