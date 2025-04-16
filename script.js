@@ -102,37 +102,27 @@ function translateText() {
         // Remove punctuation and trim spaces
         inputText = inputText.toLowerCase().replace(/[?!.,]/g, "").trim();
 
-        // ** Check for single-letter input **
-        if (inputText.length === 1 && marsAlphabet[inputText]) {
-            // Translate using Mars Alphabet if input is a single letter
-            outputElement.innerText = marsAlphabet[inputText];
-            document.getElementById("add-word-section").style.display = "none"; // Hide translation addition section
-            return;
-        }
-
-        // Check if the entire sentence exists in the dictionary first
-        if (martianDictionary[inputText]) {
-            outputElement.innerText = martianDictionary[inputText];
-            document.getElementById("add-word-section").style.display = "none"; // Hide translation addition section
-            return;
-        }
-
-        // Translate word by word for sentences
-        let words = inputText.split(/\s+/);
-        let translatedWords = [];
+        // Split input into tokens (words or letters)
+        let tokens = inputText.split(/\s+/); // Use whitespace to split into tokens
+        let translatedTokens = [];
         let unknownWords = [];
 
-        words.forEach(word => {
-            if (martianDictionary[word]) {
-                translatedWords.push(martianDictionary[word]);
-            } else if (word) {
-                translatedWords.push(`[No translation for '${word}']`);
-                unknownWords.push(word);
+        tokens.forEach(token => {
+            if (token.length === 1 && marsAlphabet[token]) {
+                // If it's a single letter, use the Mars Alphabet
+                translatedTokens.push(marsAlphabet[token]);
+            } else if (martianDictionary[token]) {
+                // If it's a word, use the Martian Dictionary
+                translatedTokens.push(martianDictionary[token]);
+            } else if (token) {
+                // Unknown token
+                translatedTokens.push(`[No translation for '${token}']`);
+                unknownWords.push(token);
             }
         });
 
         // Update the output
-        outputElement.innerText = translatedWords.join(" ");
+        outputElement.innerText = translatedTokens.join(" ");
 
         // Show "Add a Translation" section only for unknown words
         if (unknownWords.length > 0) {
