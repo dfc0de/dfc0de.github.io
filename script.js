@@ -33,10 +33,10 @@ function translateText() {
     let inputText = document.getElementById("earth-input").value.trim();
     let outputElement = document.getElementById("martian-output");
 
-    // Display "Thinking..." immediately
+    // Display "Thinking..." while processing
     outputElement.innerText = "Thinking...";
 
-    // Add a small delay to simulate processing and allow "Thinking..." to show
+    // Add a small delay to simulate processing
     setTimeout(() => {
         if (!inputText) {
             outputElement.innerText = "Your translation will appear here.";
@@ -54,7 +54,14 @@ function translateText() {
 
         // Otherwise, translate word by word
         let words = inputText.split(" ");
-        let translatedWords = words.map(word => martianDictionary[word] || `[No translation for '${word}']`);
+        let translatedWords = words.map(word => {
+            if (!martianDictionary[word]) {
+                // Trigger a popup if word is not found
+                alert(`Tell me what this means: '${word}'`);
+                return `[No translation for '${word}']`;
+            }
+            return martianDictionary[word];
+        });
 
         // Update the output after processing
         outputElement.innerText = translatedWords.join(" ");
