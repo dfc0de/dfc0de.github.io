@@ -95,31 +95,37 @@ function translateText() {
     setTimeout(() => {
         if (!inputText) {
             outputElement.innerText = "Your translation will appear here.";
-            // Hide the "Add a Translation" section if no input
-            document.getElementById("add-word-section").style.display = "none";
+            document.getElementById("add-word-section").style.display = "none"; // Hide translation addition section
             return;
         }
 
-        // Remove punctuation like "?", "!", etc., and preserve whole words
+        // Remove punctuation and trim spaces
         inputText = inputText.toLowerCase().replace(/[?!.,]/g, "").trim();
+
+        // ** Check for single-letter input **
+        if (inputText.length === 1 && marsAlphabet[inputText]) {
+            // Translate using Mars Alphabet if input is a single letter
+            outputElement.innerText = marsAlphabet[inputText];
+            document.getElementById("add-word-section").style.display = "none"; // Hide translation addition section
+            return;
+        }
 
         // Check if the entire sentence exists in the dictionary first
         if (martianDictionary[inputText]) {
             outputElement.innerText = martianDictionary[inputText];
-            // Hide the "Add a Translation" section if the sentence is found
-            document.getElementById("add-word-section").style.display = "none";
+            document.getElementById("add-word-section").style.display = "none"; // Hide translation addition section
             return;
         }
 
-        // Split input into individual words
-        let words = inputText.split(/\s+/); // Use whitespace to split into whole words
+        // Translate word by word for sentences
+        let words = inputText.split(/\s+/);
         let translatedWords = [];
         let unknownWords = [];
 
         words.forEach(word => {
             if (martianDictionary[word]) {
                 translatedWords.push(martianDictionary[word]);
-            } else if (word) { // Only add valid whole words
+            } else if (word) {
                 translatedWords.push(`[No translation for '${word}']`);
                 unknownWords.push(word);
             }
@@ -128,14 +134,14 @@ function translateText() {
         // Update the output
         outputElement.innerText = translatedWords.join(" ");
 
-        // Show or hide the "Add a Translation" section based on unknown words
+        // Show "Add a Translation" section only for unknown words
         if (unknownWords.length > 0) {
             document.getElementById("add-word-section").style.display = "block";
-            document.getElementById("new-word").value = unknownWords[0]; // Show the first unknown word
+            document.getElementById("new-word").value = unknownWords[0];
         } else {
             document.getElementById("add-word-section").style.display = "none";
         }
-    }, 300); // Delay of 300ms
+    }, 300); // Delay for user experience
 }
 
 function addTranslation() {
