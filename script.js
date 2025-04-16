@@ -42,13 +42,7 @@ function translateText() {
             return;
         }
 
-        // Check if the input ends with a space (indicating completed word)
-        if (!inputText.endsWith(" ")) {
-            outputElement.innerText = "Keep typing...";
-            return;
-        }
-
-        // Remove punctuation like "?", "!", etc.
+        // Remove punctuation like "?", "!", etc., and preserve whole words
         inputText = inputText.toLowerCase().replace(/[?!.,]/g, "").trim();
 
         // Check if the entire sentence exists in the dictionary first
@@ -57,15 +51,15 @@ function translateText() {
             return;
         }
 
-        // Otherwise, translate word by word
-        let words = inputText.split(" ");
+        // Split input into individual words
+        let words = inputText.split(/\s+/); // Use whitespace to split into whole words
         let translatedWords = [];
         let unknownWords = [];
 
         words.forEach(word => {
             if (martianDictionary[word]) {
                 translatedWords.push(martianDictionary[word]);
-            } else {
+            } else if (word) { // Only add valid whole words
                 translatedWords.push(`[No translation for '${word}']`);
                 unknownWords.push(word);
             }
