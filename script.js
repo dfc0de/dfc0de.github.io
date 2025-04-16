@@ -16,6 +16,9 @@ const martianDictionary = {
     "yes": "thak",
     "no": "gron",
     "thank": "zorath",
+    "you": "ogg",
+    "how": "zod",
+    "you": "blorp",
     
     // Common Sentences
     "how are you": "zog blorp?",
