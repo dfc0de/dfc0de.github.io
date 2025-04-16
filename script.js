@@ -81,3 +81,25 @@ function translateText() {
         }
     }, 300); // Delay of 300ms
 }
+
+function addTranslation() {
+    let newWord = document.getElementById("new-word").value.trim();
+    let martianTranslation = document.getElementById("martian-translation").value.trim();
+
+    if (newWord && martianTranslation) {
+        // Add the new word and its translation to the dictionary
+        martianDictionary[newWord] = martianTranslation;
+
+        // Clear the input fields
+        document.getElementById("new-word").value = "";
+        document.getElementById("martian-translation").value = "";
+
+        // Hide the "Add a Translation" section
+        document.getElementById("add-word-section").style.display = "none";
+
+        // Display the confirmation message
+        alert(`Translation added for "${newWord}" as "${martianTranslation}" (pending approval).`);
+    } else {
+        alert("Please enter a valid translation!");
+    }
+}
