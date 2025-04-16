@@ -31,8 +31,13 @@ const martianDictionary = {
 
 function translateText() {
     let inputText = document.getElementById("earth-input").value.trim();
+    let outputElement = document.getElementById("martian-output");
+
+    // Display "thinking..." while processing
+    outputElement.innerText = "Thinking...";
+
     if (!inputText) {
-        document.getElementById("martian-output").innerText = "Your translation will appear here.";
+        outputElement.innerText = "Your translation will appear here.";
         return;
     }
 
@@ -41,13 +46,14 @@ function translateText() {
 
     // Check if the entire sentence exists in the dictionary first
     if (martianDictionary[inputText]) {
-        document.getElementById("martian-output").innerText = martianDictionary[inputText];
+        outputElement.innerText = martianDictionary[inputText];
         return;
     }
 
     // Otherwise, translate word by word
     let words = inputText.split(" ");
-    let translatedWords = words.map(word => martianDictionary[word] || `[ERROR: No translation for '${word}']`);
+    let translatedWords = words.map(word => martianDictionary[word] || `[No translation for '${word}']`);
     
-    document.getElementById("martian-output").innerText = translatedWords.join(" ");
+    // Update the output after processing
+    outputElement.innerText = translatedWords.join(" ");
 }
