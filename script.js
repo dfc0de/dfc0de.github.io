@@ -36,16 +36,15 @@ function translateText() {
         return;
     }
 
-    let words = inputText.toLowerCase().split(" ");
-    let translatedWords = words.map(word => {
-        if (martianDictionary[word]) {
-            return martianDictionary[word]; 
-        } else {
-            let newWord = prompt(`No Martian translation for '${word}'. Add one?`);
-            if (newWord) martianDictionary[word] = newWord;
-            return newWord ? newWord : `[ERROR: No translation for '${word}']`;
-        }
-    });
+    // Check if the entire sentence exists in the dictionary first
+    if (martianDictionary[inputText.toLowerCase()]) {
+        document.getElementById("martian-output").innerText = martianDictionary[inputText.toLowerCase()];
+        return;
+    }
 
+    // Otherwise, translate word by word
+    let words = inputText.toLowerCase().split(" ");
+    let translatedWords = words.map(word => martianDictionary[word] || `[ERROR: No translation for '${word}']`);
+    
     document.getElementById("martian-output").innerText = translatedWords.join(" ");
 }
