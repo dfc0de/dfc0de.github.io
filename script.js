@@ -36,15 +36,20 @@ function translateText() {
     // Display "Thinking..." while processing
     outputElement.innerText = "Thinking...";
 
-    // Add a small delay to simulate processing
     setTimeout(() => {
         if (!inputText) {
             outputElement.innerText = "Your translation will appear here.";
             return;
         }
 
+        // Check if the input ends with a space (indicating completed word)
+        if (!inputText.endsWith(" ")) {
+            outputElement.innerText = "Keep typing...";
+            return;
+        }
+
         // Remove punctuation like "?", "!", etc.
-        inputText = inputText.toLowerCase().replace(/[?!.,]/g, "");
+        inputText = inputText.toLowerCase().replace(/[?!.,]/g, "").trim();
 
         // Check if the entire sentence exists in the dictionary first
         if (martianDictionary[inputText]) {
@@ -75,23 +80,4 @@ function translateText() {
             document.getElementById("new-word").value = unknownWords[0]; // Show the first unknown word
         }
     }, 300); // Delay of 300ms
-}
-
-function addTranslation() {
-    let newWord = document.getElementById("new-word").value.trim();
-    let martianTranslation = document.getElementById("martian-translation").value.trim();
-
-    if (newWord && martianTranslation) {
-        // Add the new word and its translation to the dictionary
-        martianDictionary[newWord] = martianTranslation;
-
-        // Clear the input fields and hide the "Add a Translation" section
-        document.getElementById("new-word").value = "";
-        document.getElementById("martian-translation").value = "";
-        document.getElementById("add-word-section").style.display = "none";
-
-        alert(`Added "${newWord}" as "${martianTranslation}" to the dictionary!`);
-    } else {
-        alert("Please enter a valid translation!");
-    }
 }
