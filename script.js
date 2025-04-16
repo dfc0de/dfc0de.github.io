@@ -36,14 +36,17 @@ function translateText() {
         return;
     }
 
+    // Remove punctuation like "?", "!", etc.
+    inputText = inputText.toLowerCase().replace(/[?!.,]/g, "");
+
     // Check if the entire sentence exists in the dictionary first
-    if (martianDictionary[inputText.toLowerCase()]) {
-        document.getElementById("martian-output").innerText = martianDictionary[inputText.toLowerCase()];
+    if (martianDictionary[inputText]) {
+        document.getElementById("martian-output").innerText = martianDictionary[inputText];
         return;
     }
 
     // Otherwise, translate word by word
-    let words = inputText.toLowerCase().split(" ");
+    let words = inputText.split(" ");
     let translatedWords = words.map(word => martianDictionary[word] || `[ERROR: No translation for '${word}']`);
     
     document.getElementById("martian-output").innerText = translatedWords.join(" ");
