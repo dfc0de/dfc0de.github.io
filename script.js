@@ -62,6 +62,42 @@ const marsAlphabet = {
     "z": "marsaz"
 };
 
+const marsNumbers = {
+    "1": "oneza",
+    "2": "twoza",
+    "3": "threeza",
+    "4": "fourza",
+    "5": "fiveza",
+    "6": "sixza",
+    "7": "sevenza",
+    "8": "eightza",
+    "9": "nineza",
+    "0": "zeroza"
+};
+
+function translateNumbers() {
+    let inputText = document.getElementById("earth-input").value.trim();
+    let outputElement = document.getElementById("martian-output");
+
+    // Display "Thinking..." while processing
+    outputElement.innerText = "Thinking...";
+
+    setTimeout(() => {
+        if (!inputText) {
+            outputElement.innerText = "Your translation will appear here.";
+            return;
+        }
+
+        // Translate numbers one by one
+        let translatedNumbers = inputText.split("").map(char => {
+            return marsNumbers[char] || char; // Use Mars Numbers or keep original for non-numeric
+        });
+
+        // Update the output
+        outputElement.innerText = translatedNumbers.join(" ");
+    }, 300); // Delay for user experience
+}
+
 function translateToMarsAlphabet() {
     let inputText = document.getElementById("earth-input").value.trim().toLowerCase();
     let outputElement = document.getElementById("martian-output");
