@@ -1,14 +1,12 @@
 :root {
   --primary: CornflowerBlue;
-  --primary-light:  rgb(128, 166, 237);
+  --primary-light: rgb(128, 166, 237);
   --secondary: #c4b5fd;
   --tertiary: #fb7185;
-
 }
 
-
 body {
-  font-family: Lucida Sans Unicode;
+  font-family: "Lucida Sans Unicode", sans-serif;
   background-color: #d5e8fc;
   margin: 0;
 }
@@ -25,10 +23,16 @@ nav {
 nav a {
   color: rgb(240, 240, 253);
   text-decoration: none;
+  padding: 10px;
 }
 
 nav a:hover {
-  background-color:var(--primary-light);
+  background-color: var(--primary-light);
+}
+
+nav .links {
+  display: flex;
+  align-items: center;
 }
 
 nav .links > * {
@@ -36,22 +40,24 @@ nav .links > * {
   padding: 10px 5px;
 }
 
-/* Dropdown Button */
+/* Dropdown Styling */
 .dropbtn {
   background-color: var(--primary);
   color: white;
   font-size: 16px;
-  font-family: Lucida Sans Unicode;
+  font-family: "Lucida Sans Unicode", sans-serif;
   border: none;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
-/* The container <div> - needed to position the dropdown content */
+/* Dropdown Container */
 .dropdown {
   position: relative;
   display: inline-block;
 }
 
-/* Dropdown Content (Hidden by Default) */
+/* Dropdown Menu */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -60,21 +66,33 @@ nav .links > * {
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  left: 0;
 }
 
-/* Links inside the dropdown */
+/* Dropdown Links */
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  font-size: 14px;
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
+/* Hover Effects */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
+/* Dropdown Visibility on Hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
 
-.dropdown:hover .dropbtn,.dropdown:hover{
-  background-color: var(--primary-light);}
+.dropdown:hover .dropbtn {
+  background-color: var(--primary-light);
+}
