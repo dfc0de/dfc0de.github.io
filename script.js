@@ -152,32 +152,35 @@ function translateText() {
         // Remove punctuation and trim spaces
         inputText = inputText.toLowerCase().replace(/[?!.,]/g, "").trim();
 
-        // Split input into tokens (words or letters)
-        let tokens = inputText.split(/\s+/); // Use whitespace to split into tokens
+        // Split input into tokens (letters, numbers, or words)
+        let tokens = inputText.split(/\s+/);
         let translatedTokens = [];
-        let unknownWords = [];
+        let unknownTokens = [];
 
         tokens.forEach(token => {
-            if (token.length === 1 && marsAlphabet[token]) {
-                // If it's a single letter, use the Mars Alphabet
-                translatedTokens.push(marsAlphabet[token]);
+            if (marsNumbers[token]) {
+                // Translate numeric digits or number words using marsNumbers
+                translatedTokens.push(marsNumbers[token]);
             } else if (martianDictionary[token]) {
-                // If it's a word, use the Martian Dictionary
+                // Translate words or sentences using martianDictionary
                 translatedTokens.push(martianDictionary[token]);
+            } else if (token.length === 1 && marsAlphabet[token]) {
+                // Translate individual letters using marsAlphabet
+                translatedTokens.push(marsAlphabet[token]);
             } else if (token) {
                 // Unknown token
                 translatedTokens.push(`[No translation for '${token}']`);
-                unknownWords.push(token);
+                unknownTokens.push(token);
             }
         });
 
         // Update the output
         outputElement.innerText = translatedTokens.join(" ");
 
-        // Show "Add a Translation" section only for unknown words
-        if (unknownWords.length > 0) {
+        // Show "Add a Translation" section only for unknown tokens
+        if (unknownTokens.length > 0) {
             document.getElementById("add-word-section").style.display = "block";
-            document.getElementById("new-word").value = unknownWords[0];
+            document.getElementById("new-word").value = unknownTokens[0];
         } else {
             document.getElementById("add-word-section").style.display = "none";
         }
